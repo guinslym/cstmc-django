@@ -14,7 +14,6 @@ pytest-django==2.9.1
 simplegeneric==0.8.1
 traitlets==4.2.1
 mixer==5.5.7
-stripe==1.35.0
 mock==2.0.0
 flake8
 django-seed==0.1.6
