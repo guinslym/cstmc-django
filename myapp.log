@@ -1,0 +1,43 @@
+2017-04-12 18:49:31,843 INFO <module> - (35) - Started
+2017-04-12 18:49:31,844 ERROR <module> - (36) - Started
+2017-04-12 18:49:31,844 WARNING <module> - (37) - Started
+2017-04-12 18:49:31,844 CRITICAL <module> - (38) - Finished
+2017-04-12 19:02:00,164 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1968.0399.001.aa.cs.thumb.png
+2017-04-12 19:09:30,450 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/2010.0611.001.aa cs.png
+2017-04-12 19:13:45,116 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1966.0401.001.aa.cs.thumb.png
+2017-04-12 19:14:02,610 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/2010.0611.001.aa cs.thumb.png
+2017-04-12 19:24:37,691 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1984.1191.001.aa.cs.thumb.png
+2017-04-12 19:35:00,636 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/2002.1028 001.aa.cs.png
+2017-04-12 19:40:47,737 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1993.0084.001.aa.cs.png
+2017-04-12 19:48:18,786 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/2014.0190.001.aa.cs.png
+2017-04-12 20:00:08,750 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1991.0219.001.aa.cs.png
+2017-04-12 20:03:05,364 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/2011.0025 .001.aa.cs.png
+2017-04-12 20:38:17,330 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1967.0859 001.aa.cs.thumb.png
+2017-04-12 20:49:22,528 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1986.0776.001.aa.cs.png
+2017-04-12 20:55:20,755 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1988.0200.001.aa.cs.png
+2017-04-12 21:06:32,385 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1992.0819.001.aa.cs.thumb.png
+2017-04-12 21:09:50,101 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/2013.0101.001.aa cs.thumb.png
+2017-04-12 21:10:51,261 INFO <module> - (35) - Started
+2017-04-12 21:10:51,262 ERROR <module> - (36) - Started
+2017-04-12 21:10:51,262 WARNING <module> - (37) - Started
+2017-04-12 21:10:51,262 CRITICAL <module> - (38) - Finished
+2017-04-12 21:11:12,741 INFO <module> - (35) - Started
+2017-04-12 21:11:12,741 ERROR <module> - (36) - Started
+2017-04-12 21:11:12,741 WARNING <module> - (37) - Started
+2017-04-12 21:11:12,741 CRITICAL <module> - (38) - Finished
+2017-04-12 21:20:19,316 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1984.0197.001.aa.cs.png
+2017-04-12 21:22:01,528 INFO <module> - (35) - Started
+2017-04-12 21:22:01,528 ERROR <module> - (36) - Started
+2017-04-12 21:22:01,528 WARNING <module> - (37) - Started
+2017-04-12 21:22:01,528 CRITICAL <module> - (38) - Finished
+2017-04-12 21:27:03,359 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1970.0652 001.aa.cs.png
+2017-04-12 21:29:56,310 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1986.0776.001.aa.cs.thumb.png
+2017-04-12 21:37:31,562 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1992.0819.001.aa.cs.png
+2017-04-12 21:40:03,407 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1984.0729.001.aa.cs.thumb.png
+2017-04-12 21:51:11,388 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1987.0263.001.aa.cs.png
+2017-04-12 21:54:50,813 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1991.0219.001.aa.cs.thumb.png
+2017-04-12 21:58:30,297 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1970.0635 001.aa.cs.thumb.png
+2017-04-12 22:04:10,414 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1995.0335.001.aa.cs.png
+2017-04-12 22:23:56,250 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/2011.0025 .002.aa.cs.png
+2017-04-12 22:29:08,599 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1991.0017.001.aa.cs.thumb.png
+2017-04-12 22:35:47,439 CRITICAL download_image - (133) - http://source.techno-science.ca/artifacts-artefacts/images/1988.0200.001.aa.cs.thumb.png
