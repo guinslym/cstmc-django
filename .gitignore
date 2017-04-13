@@ -32,3 +32,4 @@ htmlcov/
 description.todo
 python3env
 hello*.json
+*journa*

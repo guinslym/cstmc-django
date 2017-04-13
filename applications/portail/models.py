@@ -21,6 +21,7 @@ class Artefact(TimeStampedModel, models.Model):
     def __str__(self):
         return self.ObjectName
 
+    IDNO                = models.CharField(max_length=40, blank=True, null=True)
     ObjectName          = models.CharField(max_length=40, blank=True, null=True, default="No Name")
     GeneralDescription  = models.CharField(max_length=40, blank=True, null=True)
     model               = models.CharField(max_length=40, blank=True, null=True)
