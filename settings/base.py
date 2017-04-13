@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
-WSGI_APPLICATION = 'cityjobs.wsgi.application'
-ROOT_URLCONF = 'cityjobs.urls'
+ROOT_URLCONF = 'cstmc.urls'
+WSGI_APPLICATION = 'cstmc.wsgi.application'
 SITE_ID=1
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -50,12 +50,11 @@ BASE_APPS =  (
 )
 
 THIRD_PARTY_APPS =  (
-    'rest_framework',
      'crispy_forms',
     'bootstrap_pagination',
 )
 LOCAL_APPS = (
-    'applications.emplois',
+    'applications.portail',
 )
 
 '''
@@ -172,8 +171,6 @@ AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
 
-    # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 

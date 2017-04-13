@@ -59,17 +59,17 @@ LOGGING = {
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.views': {
+         'applications.portail.views': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.utils': {
+         'applications.portail.utils': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.tweets': {
+         'applications.portail.tweets': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,

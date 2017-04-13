@@ -1,4 +1,4 @@
-import os
+artefactsimport os
 
 from .base import *
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -71,17 +71,17 @@ LOGGING = {
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.views': {
+         'applications.artefacts.views': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.utils': {
+         'applications.artefacts.utils': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
          },
-         'applications.emplois.tweets': {
+         'applications.artefacts.tweets': {
              'handlers': ['file'],
              'level':'INFO',
              'propagate': True,
