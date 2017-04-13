@@ -20,41 +20,41 @@ class Artefact(models.Model):
     def __str__(self):
         return self.ObjectName
 
-	ObjectName          = models.
-	GeneralDescription  = models.
-	model               = models.
-	SerialNumber        = models.
-	Manufacturer        = models.
-	ManuCountry         = models.
-	ManuProvince        = models.
-	ManuCity            = models.
-	BeginDate           = models.
-	EndDate             = models.
-	date_qualifier      = models.
-	patent              = models.
-	NumberOfComponents  = models.
-	ArtifactFinish      = models.
-	ContextCanada       = models.
-	ContextFunction     = models.
-	ContextTechnical    = models.
-	group1              = models.
-	category1           = models.
-	subcategory1        = models.
-	group2              = models.
-	category2           = models.
-	subcategory2        = models.
-	group3              = models.
-	category3           = models.
-	subcategory3        = models.
-	material            = models.
-	Length              = models.
-	Width               = models.
-	Height              = models.
-	Thickness           = models.
-	Weight              = models.
-	Diameter            = models.
-	image               = models.
-	thumbnail           = models.
+	ObjectName          = models.CharField(max_length=40, blank=True, null=True)
+	GeneralDescription  = models.CharField(max_length=40, blank=True, null=True)
+	model               = models.CharField(max_length=40, blank=True, null=True)
+	SerialNumber        = models.CharField(max_length=40, blank=True, null=True)
+	Manufacturer        = models.CharField(max_length=40, blank=True, null=True)
+	ManuCountry         = models.CharField(max_length=40, blank=True, null=True)
+	ManuProvince        = models.CharField(max_length=40, blank=True, null=True)
+	ManuCity            = models.CharField(max_length=40, blank=True, null=True)
+	BeginDate           = models.CharField(max_length=40, blank=True, null=True)
+	EndDate             = models.CharField(max_length=40, blank=True, null=True)
+	date_qualifier      = models.CharField(max_length=40, blank=True, null=True)
+	patent              = models.CharField(max_length=40, blank=True, null=True)
+	NumberOfComponents  = models.CharField(max_length=40, blank=True, null=True)
+	ArtifactFinish      = models.TextField(blank=True, null=True)
+	ContextCanada       = models.TextField(blank=True, null=True)
+	ContextFunction     = models.TextField(blank=True, null=True)
+	ContextTechnical    = models.TextField(blank=True, null=True)
+	group1              = models.CharField(max_length=40, blank=True, null=True)
+	category1           = models.CharField(max_length=40, blank=True, null=True)
+	subcategory1        = models.CharField(max_length=40, blank=True, null=True)
+	group2              = models.CharField(max_length=40, blank=True, null=True)
+	category2           = models.CharField(max_length=40, blank=True, null=True)
+	subcategory2        = models.CharField(max_length=40, blank=True, null=True)
+	group3              = models.CharField(max_length=40, blank=True, null=True)
+	category3           = models.CharField(max_length=40, blank=True, null=True)
+	subcategory3        = models.CharField(max_length=40, blank=True, null=True)
+	material            = models.CharField(max_length=40, blank=True, null=True)
+	Length              = models.CharField(max_length=40, blank=True, null=True)
+	Width               = models.CharField(max_length=40, blank=True, null=True)
+	Height              = models.CharField(max_length=40, blank=True, null=True)
+	Thickness           = models.CharField(max_length=40, blank=True, null=True)
+	Weight              = models.CharField(max_length=40, blank=True, null=True)
+	Diameter            = models.CharField(max_length=40, blank=True, null=True)
+	image               = models.URLField(max_length=250, blank=True, null=True)
+	thumbnail           = models.URLField(max_length=250, blank=True, null=True)
 	language = models.CharField(max_length=2, choices=LANGUAGE_CHOICE, default=ENGLISH)
 
     JOBURL = models.URLField(max_length=250, blank=True, null=True)
