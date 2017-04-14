@@ -6,7 +6,7 @@ from applications.portail.views import (
 	#Other
 	ArtefactHomeView,
   ArtefactListView,
-  ArtefactDetailView
+  ArtefactDetailView,
 	)
 
 
