@@ -10,6 +10,6 @@ from applications.portail.views import (
 
 urlpatterns = [
    url(r'^home/$', ArtefactHomeView.as_view(), name='artefact_home'),
-   #url(r'^list/$', ProductListView.as_view(), name='product_list'),
-   #url(r'^about/$', MyView.as_view(), name='about'),
+   #url(r'^home/$', ArtefactHomeView.as_view(), name='artefact_home'),
+   #url(r'^home/$', ArtefactHomeView.as_view(), name='artefact_home'),
 ]
