@@ -1,5 +1,6 @@
 todo:
- ☐ Fill the db
+ ☐ ListView (add Link)
+ ☐ ListView (Add pagination)
  ☐ Page to DetailPage (should be blank)
  ☐ Manage Materials (db)
  ☐ Manage Categoy (db)
@@ -9,5 +10,6 @@ todo:
  ☐ Add javascript
  ☐ Redo the db (maybe)
  ☐ tests
+ ☐ Fill the db
  ☐ Deploy
  ☐ 3 hrs max (got other things todo $$$$$$$$$ think Big)
