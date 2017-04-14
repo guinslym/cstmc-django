@@ -25,10 +25,36 @@ from applications.portail.models  import Artefact
 class ArtefactHomeView(TemplateView):
     template_name = 'portail/home_view.html'
 
-class ArtefactListView(ListView):
+#formView
+
+class ArtefactListView(SelectRelatedMixin):
+    model = Artefact
     template_name = 'portail/home_view.html'
+    paginate_by = 25
+
+    def get_context_data(self, **kwargs):
+        context = super(ArtefactListView, self).get_context_data(**kwargs)
+        context['now'] = datetime.now()
+        return context
+    """
+    def get_queryset(self):
+    	pass
+        #return Artefact.objects.select_related('author')
+        #return Artefact.objects.all()#filter(status__iexact=Artefact.STATUS.active)
+	"""
+    def get_paginate_by(self, queryset):
+        """ Paginate by specified value in querystring, or use default class property value.  """
+        return self.request.GET.get('paginate_by', self.paginate_by)
+
+artefact_list = ArtefactListView.as_view()
 
 class ArtefactDetailView(DetailView):
-    template_name = 'portail/home_view.html'
+    model = Artefact
+    template_name = 'portail/detail.html'
 
-#formView
+    def get_context_data(self, **kwargs):
+        context = super(ArtefactDetailView, self).get_context_data(**kwargs)
+        context['now'] = datetime.now()
+        return context
+
+artefact_detail = ArtefactDetailView.as_view()
