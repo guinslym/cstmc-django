@@ -1,75 +1,12 @@
 todo:
-  ☐ On a Unix/Linux machine: compile the translation (python manage.py compilemessages)
-  ☐ Static files on production
-  ☐ tests
-
-Advanced:
- ☐ Twitter bots
-
-ReactJS:
-  ☐ adding a menu for all expired job posting
-  ☐ A more efficient way to Downlad View. (not overkill the app on the server)
-  ☐ Adding ReactJS
-  ☐ Adding ReduxJS
-  ☐ Adding Authentification for download all the JSON
-
-
-＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
-Archive:
- ✔ - Already expired @done(2016-12-15 12:47) @project(todo) @project(todo)
-  ✔ Cronjobs @done(2016-12-14 18:17) @project(todo)
-  ✔ Can add new jobs but the Queries doesn't work for: expired in 2 weeks from now @done(2016-12-14 17:20) @project(todo)
-  ✔ Update : add new jobs @done(2016-12-14 17:06) @project(todo)
-  ✔ Pagination where is the last button??? @done(2016-12-14 17:02) @project(Advanced)
-  ✔ About: Robots.txt and Humans.txt @done(2016-12-14 16:41) @project(Advanced)
-  ✔ Return to homepage : add icon @done(2016-12-14 16:38) @project(todo)
-  ✔ Background color for 'Expiring date' @done(2016-12-14 16:38) @project(Advanced)
-  ✔ Add contributions of Denis @done(2016-12-14 16:38) @project(todo)
-  ✔ About: how-to same layout for date @done(2016-12-14 16:38) @project(Advanced)
-  ✔ bugs in contains: Manager, Digital Service & Innovation @done(2016-12-14 16:23) @project(todo)
-  ✔ Stats...links @done(2016-12-14 16:01) @project(todo)
-  ✔ update @done(2016-12-14 14:55) @project(todo)
-  ✔ Same layout for expiration date @done(2016-12-14 14:55) @project(todo)
-  ✔ Translate Job found {} --> Can't find it @done(2016-12-14 14:25) @project(todo)
-  ✔ Remove - Language Switcher @done(2016-12-14 14:22) @project(todo)
-  ✔ Languages to set differently @done(2016-12-14 14:22) @project(todo)
-  ✔ one urls @done(2016-12-14 14:21) @project(todo)
-  ✔ Emplois Detail @done(2016-12-14 14:21) @project(todo)
-  ✔ SearchJobs @done(2016-12-14 14:20) @project(todo)
-  ✔ Title fr or EN @done(2016-12-14 12:40) @project(todo)
-  ✔ Favicon @done(2016-12-14 12:37) @project(todo)
-  ✔ Github to add over settings @done(2016-12-12 16:09) @project(todo)
-  ✔ CDN to install @done(2016-12-12 16:04) @project(todo)
- ✔ base.html in Fr Translation add offre d'emplois de la ville d'Ottawa @done (17-03-22 21:29) @project(todo)
- ✔ Télécharger @done (17-03-22 21:29) @project(todo)
- ✔ Translation for index.html Ordre Order == plus petit au plus grand @done (17-03-22 21:29) @project(todo)
- ✔ Mac: Add Content into the Makefile @done (17-03-22 21:29) @project(todo)
- ✔ Tests @done (17-03-22 21:13) @project(todo)
- ✔ Tests (1hr) @done (17-03-22 21:13) @project(todo)
- ✔ Makefiles @done (17-03-22 20:22) @project(todo)
- ✔ Take the api of ottawacityjobs and put it into utils.py (1hr) @done (17-03-22 16:35) @project(todo)
- ✔ Adding Twitter posts (6 times a day) --- create special routes -- postpone @done (17-03-22 16:35) @project(todo)
- ✔ Download PDFs (1hr) @done (17-03-22 16:06) @project(todo)
- ✔ tests utils.py @done (17-03-22 15:00) @project(todo)
- ✔ Download file (json) (xml) in the cache @done (17-03-22 14:55) @project(todo)
- ✔ SiteMaps --no need @done (17-03-22 14:47) @project(todo)
- ✔ RSS Feeds --no need @done (17-03-22 14:47) @project(todo)
- ✔ adding a menu for all expired job posting ---postpone @done (17-03-22 14:46) @project(todo)
- ✔ Increase the size of the D3.js calendar @done (17-03-22 14:43) @project(todo)
- ✔ Add Font awesome Arrow with abbr meaning the Order of the select @done (17-03-22 14:21) @project(todo)
- ✔ Homepage logo to link to English or French site @done (17-03-22 14:06) @project(todo)
- ✔ create TemplateTags to create url @done (17-03-22 13:58) @project(todo)
- ✔ Form Search job to put in Absolute url (base.html) @done (17-03-22 13:58) @project(todo)
- ✔ Verify that the old dates are Veridict meaning if I went to the PDF it will be the same @done (17-03-22 12:18) @project(Advanced)
- ✔ Testing @done (17-03-22 12:18) @project(Advanced)
- ✔ Retrieve data from ELUTA not neccessarly from OttawaCityJobs @done (17-03-22 12:18) @project(Advanced)
- ✔ Downloaded data to be in JSON, SQL and XML format, YAML @done (17-03-22 12:18) @project(Advanced)
- ✔ Add a command to add secret_key_update into path if it's development @done (17-03-22 12:17) @project(todo)
- ✔ Makefile @done (17-03-22 12:15) @project(todo)
- ✔ Download the repo on the server @done (17-03-22 11:58) @project(todo)
- ✔ Add cityjobs Github repo @done (17-03-19 17:17) @project(todo)
-  ✔ remove the process to create a file @done (16-12-13 07:59)
-  ✔ download the sqlite @done (16-12-13 07:15)
-  ✔ Load new data into databases @done (16-12-12 23:10)
-  ✔ Check Will expired 2 weeks from now @done (16-12-12 23:10)
-  ✔ Check Posted within last 2 weeks @done (16-12-12 23:10)
+ ☐ Fill the db
+ ☐ Page to DetailPage (should be blank)
+ ☐ Manage Materials (db)
+ ☐ Manage Categoy (db)
+ ☐ Manage Color
+ ☐ Creating SearchFormPage (simple)
+ ☐ Creating AdvancedSearchFormPage (Q)
+ ☐ Add javascript
+ ☐ Redo the db (maybe)
+ ☐ tests
+ ☐ Deploy
