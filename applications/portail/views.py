@@ -23,9 +23,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 from applications.portail.models  import Artefact
 
 
+class ArtefactHomeView(TemplateView):
+    template_name = 'portail/home_view.html'
 
+class ArtefactListView(ListView):
+    template_name = 'portail/home_view.html'
 
+class ArtefactDetailView(DetailView):
+    template_name = 'portail/home_view.html'
 
-
-class HomeView(TemplateView):
-    template_name = 'wadiyabi/product_list.html'
+#formView
