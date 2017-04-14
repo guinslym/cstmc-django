@@ -1,23 +1,10 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
-{% load static %}
-<!doctype html>
-<html lang="en" class="no-js">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
-	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
-	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
-  	
-	<title>Content Filters | CodyHouse</title>
-</head>
-<body>
-	<header class="cd-header">
-		<h1>Content Filters</h1>
-	</header>
+
+{% block content %}
+
 
 	<main class="cd-main-content">
 		<div class="cd-tab-filter-wrapper">
@@ -128,8 +115,6 @@
 
 		<a href="#0" class="cd-filter-trigger">Filters</a>
 	</main> <!-- cd-main-content -->
-<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
-<script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
-</body>
-</html>
+
+
+{% endblock %}
