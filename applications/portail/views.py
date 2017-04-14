@@ -27,7 +27,7 @@ class ArtefactHomeView(TemplateView):
 
 #formView
 
-class ArtefactListView(SelectRelatedMixin, ListView):
+class ArtefactListView(ListView):
     model = Artefact
     template_name = 'portail/home_view.html'
     paginate_by = 25

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load portail_extras %}
 
 
 
@@ -22,7 +23,14 @@
 
 		<section class="cd-gallery">
 			<ul>
-				<li class="mix color-1 check1 radio2 option3"><img src="{% static 'img/img-1.jpg' %}" alt="Image 1"></li>
+			{% for product in object_list %}
+				<li class="mix {% get_options %}">
+					<a href="#">
+						<img src="{% static 'img/img-1.jpg' %}" alt="{% get_image %}">
+					</a>
+				</li>
+			{% endfor %}
+				<!-- 
 				<li class="mix color-2 check2 radio2 option2"><img src="{% static 'img/img-2.jpg' %}" alt="Image 2"></li>
 				<li class="mix color-1 check3 radio3 option1"><img src="{% static 'img/img-3.jpg' %}" alt="Image 3"></li>
 				<li class="mix color-1 check3 radio2 option4"><img src="{% static 'img/img-4.jpg' %}" alt="Image 4"></li>
@@ -34,6 +42,9 @@
 				<li class="mix color-1 check3 radio2 option4"><img src="{% static 'img/img-10.jpg' %}"  alt="Image 10"></li>
 				<li class="mix color-1 check3 radio3 option2"><img src="{% static 'img/img-11.jpg' %}"  alt="Image 11"></li>
 				<li class="mix color-2 check1 radio3 option1"><img src="{% static 'img/img-12.jpg' %}"  alt="Image 12"></li>
+
+				commenting -->
+				
 				<li class="gap"></li>
 				<li class="gap"></li>
 				<li class="gap"></li>
