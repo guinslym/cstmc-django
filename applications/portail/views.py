@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 
 #Protected
-from braces.views import LoginRequiredMixin
+from braces.views import LoginRequiredMixin, SelectRelatedMixin
 from django.contrib.auth.decorators import login_required
 
 #messages
@@ -46,7 +46,6 @@ class ArtefactListView(SelectRelatedMixin):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-artefact_list = ArtefactListView.as_view()
 
 class ArtefactDetailView(DetailView):
     model = Artefact
@@ -57,4 +56,3 @@ class ArtefactDetailView(DetailView):
         context['now'] = datetime.now()
         return context
 
-artefact_detail = ArtefactDetailView.as_view()
