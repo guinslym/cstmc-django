@@ -8,13 +8,14 @@ for i in aaa:
 	Artefact.objects.create(IDNO=i, **(data.get(i)))
 """
 
-from applications.wadiyabi.models import Product, Comment
-from applications.myprofile.models import UserProfile
+from applications.portail.models import Artefact
 from mixer.backend.django import mixer
 from django.contrib.auth.models import User
 from faker import Factory
 import random
-from friendship.models import Friend, Follow
+
+for i in range(200):
+	artefact = mixer.blend(Artefact)
 
 
 """
