@@ -27,7 +27,7 @@ class ArtefactHomeView(TemplateView):
 
 #formView
 
-class ArtefactListView(SelectRelatedMixin):
+class ArtefactListView(SelectRelatedMixin, ListView):
     model = Artefact
     template_name = 'portail/home_view.html'
     paginate_by = 25
@@ -46,6 +46,7 @@ class ArtefactListView(SelectRelatedMixin):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
+artefact_list = ArtefactListView.as_view()
 
 class ArtefactDetailView(DetailView):
     model = Artefact
@@ -56,3 +57,4 @@ class ArtefactDetailView(DetailView):
         context['now'] = datetime.now()
         return context
 
+artefact_detail = ArtefactDetailView.as_view()

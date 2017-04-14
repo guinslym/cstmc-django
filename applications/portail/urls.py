@@ -11,7 +11,7 @@ from applications.portail.views import (
 
 
 urlpatterns = [
-   url(r'^home/$', ArtefactHomeView.as_view(), name='artefact_home'),
+   url(r'^home/$', ArtefactListView.as_view(), name='artefact_home'),
    url(r'^detail/$', ArtefactDetailView.as_view(), name='artefact_detail'),
    url(r'^$', ArtefactHomeView.as_view(), name='artefact_home'),
 ]
