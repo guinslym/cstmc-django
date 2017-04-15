@@ -56,7 +56,6 @@ THIRD_PARTY_APPS =  (
 LOCAL_APPS = (
     'applications.portail',
 )
-
 '''
 CACHES = {
     'default': {
@@ -179,3 +178,4 @@ SHELL_PLUS = "ipython"
 
 LOGIN_REDIRECT_URL='/login/'
 LOGOUT_URL='/logout/'
+    

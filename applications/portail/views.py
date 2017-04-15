@@ -36,17 +36,15 @@ class ArtefactListView(ListView):
         context = super(ArtefactListView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
-    """
+
     def get_queryset(self):
-    	pass
         #return Artefact.objects.select_related('author')
-        #return Artefact.objects.all()#filter(status__iexact=Artefact.STATUS.active)
-	"""
+        return Artefact.objects.all()#filter(status__iexact=Artefact.STATUS.active)
+
     def get_paginate_by(self, queryset):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-artefact_list = ArtefactListView.as_view()
 
 class ArtefactDetailView(DetailView):
     model = Artefact
@@ -57,4 +55,3 @@ class ArtefactDetailView(DetailView):
         context['now'] = datetime.now()
         return context
 
-artefact_detail = ArtefactDetailView.as_view()
