@@ -23,10 +23,10 @@
 
 		<section class="cd-gallery">
 			<ul>
-			{% for product in object_list %}
+			{% for artefact in object_list %}
 				<li class="mix {% get_options %}">
-					<a href="{#% url 'portail:artefact_detail' object_list.id %#}">
-						<img src="{% static 'img/img-1.jpg' %}" alt="">
+					<a href="{% url 'portail:artefact_detail' artefact.id %}">
+						<img src="{% static 'img/img-1.jpg' %}" alt="{{ artefact.id}}">
 					</a>
 				</li>
 			{% endfor %}
