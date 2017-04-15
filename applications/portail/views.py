@@ -28,9 +28,10 @@ class ArtefactHomeView(TemplateView):
 #formView
 
 class ArtefactListView(ListView):
+    #context_object_name='artefacts'
+    paginate_by = 10
     model = Artefact
     template_name = 'portail/home_view.html'
-    paginate_by = 25
 
     def get_context_data(self, **kwargs):
         context = super(ArtefactListView, self).get_context_data(**kwargs)

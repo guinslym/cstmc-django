@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% load portail_extras %}
+{% load bootstrap_pagination %}
+{% load i18n %}
+{% load humanize %}
+
 
 
 
@@ -22,6 +26,27 @@
 		</div> <!-- cd-tab-filter-wrapper -->
 
 		<section class="cd-gallery">
+
+<div class="row">
+	<div class="text-left">
+		<br/>
+		<!--
+		                       _             __  _
+		    ____  ____ _____ _(_)___  ____ _/ /_(_)___  ____
+		   / __ \/ __ `/ __ `/ / __ \/ __ `/ __/ / __ \/ __ \
+		  / /_/ / /_/ / /_/ / / / / / /_/ / /_/ / /_/ / / / /
+		 / .___/\__,_/\__, /_/_/ /_/\__,_/\__/_/\____/_/ /_/
+		/_/          /____/
+		-->
+
+
+		{% bootstrap_paginate page_obj range=3 show_prev_next="true" show_first_last="true" previous_label="<" next_label=">" %}
+		 <!-- pagination -->
+	</div>
+
+</div>
+
+
 			<ul>
 			{% for artefact in object_list %}
 				<li class="mix {% get_options %}">
@@ -50,6 +75,25 @@
 				<li class="gap"></li>
 			</ul>
 			<div class="cd-fail-message">No results found</div>
+
+
+<div class="row">
+<div class="text-left">
+<br/>
+<!--
+                       _             __  _
+    ____  ____ _____ _(_)___  ____ _/ /_(_)___  ____
+   / __ \/ __ `/ __ `/ / __ \/ __ `/ __/ / __ \/ __ \
+  / /_/ / /_/ / /_/ / / / / / /_/ / /_/ / /_/ / / / /
+ / .___/\__,_/\__, /_/_/ /_/\__,_/\__/_/\____/_/ /_/
+/_/          /____/
+-->
+{% bootstrap_paginate page_obj range=3 show_prev_next="true" show_first_last="true" previous_label="<" next_label=">" %}
+
+ <!-- end pagination -->
+</div>
+
+</div>
 		</section> <!-- cd-gallery -->
 
 		<div class="cd-filter">

@@ -1,7 +1,7 @@
 todo:
  ✔ Template (add-base_mixitup.html) @done (17-04-14 19:26)
- ☐ Filter and registration
- ☐ ListView (add Link)
+ ✔ Filter and registration @done (17-04-14 20:11)
+ ✔ ListView (add Link) @done (17-04-14 20:11)
  ☐ ListView (Add pagination - bootstrap)
  ☐ Page to DetailPage (should be blank)
  ☐ Manage Materials (db)
