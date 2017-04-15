@@ -1,18 +1,21 @@
 todo:
- ✔ Template (add-base_mixitup.html) @done (17-04-14 19:26)
- ✔ Filter and registration @done (17-04-14 20:11)
- ✔ ListView (add Link) @done (17-04-14 20:11)
- ☐ ListView (Add pagination - bootstrap)
- ✔ Page to DetailPage (should be blank) @done (17-04-14 20:18)
- ☐ Manage Materials (db)
- ☐ Manage Categoy (db)
- ☐ Manage Color
+ ☐ ListView (Add pagination - bootstrap) (Add in a section and use other fonts)
+ ☐ Manage Materials (db) (templatetags)
+ ☐ Manage Category (db) (templatetags)
  ☐ Creating SearchFormPage (simple)
- ☐ Creating AdvancedSearchFormPage (Q)
- ☐ Add javascript
- ☐ Redo the db (maybe)
+ ☐ Creating AdvancedSearchFormPage (Q) (Same page as Simple but different Form)
+ ☐ Redo the db (maybe 2 or 3 table at most)
  ☐ Translation (no more  - About page)
+ ☐ Manage Color (To remove for now)
+ ☐ Add javascript (magnifier.. maybe)
  ☐ tests
  ☐ Fill the db
  ☐ Deploy
  ☐ 3 hrs max (got other things todo $$$$$$$$$ think Big)
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Page to DetailPage (should be blank) @done (17-04-14 20:18) @project(todo)
+ ✔ ListView (add Link) @done (17-04-14 20:11) @project(todo)
+ ✔ Filter and registration @done (17-04-14 20:11) @project(todo)
+ ✔ Template (add-base_mixitup.html) @done (17-04-14 19:26) @project(todo)
