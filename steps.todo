@@ -1,9 +1,12 @@
 todo:
  ☐ ListView (Add pagination - bootstrap) (Add in a section and use other fonts)
+ ☐ No result found
  ☐ Manage Materials (db) (templatetags)
- ☐ Manage Category (db) (templatetags)
+ ☐ Manage Category (db) (templatetags) (Breaks)
+ ☐ 
  ☐ Creating SearchFormPage (simple)
- ☐ Creating AdvancedSearchFormPage (Q) (Same page as Simple but different Form)
+ ☐ Creating AdvancedSearchFormPage (Q) (Same page as Simple but different Form) (break)
+ ☐ 
  ☐ Redo the db (maybe 2 or 3 table at most)
  ☐ Translation (no more  - About page)
  ☐ Manage Color (To remove for now)
