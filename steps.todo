@@ -3,7 +3,7 @@ todo:
  ✔ Filter and registration @done (17-04-14 20:11)
  ✔ ListView (add Link) @done (17-04-14 20:11)
  ☐ ListView (Add pagination - bootstrap)
- ☐ Page to DetailPage (should be blank)
+ ✔ Page to DetailPage (should be blank) @done (17-04-14 20:18)
  ☐ Manage Materials (db)
  ☐ Manage Categoy (db)
  ☐ Manage Color
@@ -11,6 +11,7 @@ todo:
  ☐ Creating AdvancedSearchFormPage (Q)
  ☐ Add javascript
  ☐ Redo the db (maybe)
+ ☐ Translation (no more  - About page)
  ☐ tests
  ☐ Fill the db
  ☐ Deploy
