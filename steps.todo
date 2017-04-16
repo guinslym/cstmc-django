@@ -7,10 +7,13 @@ todo:
  ☐ Creating SearchFormPage (simple)
  ☐ Creating AdvancedSearchFormPage (Q) (Same page as Simple but different Form) (break)
  ☐ 
+ ☐ Detail page (do the table and layout)
+ ☐ 
  ☐ Redo the db (maybe 2 or 3 table at most)
  ☐ Translation (no more  - About page)
  ☐ Manage Color (To remove for now)
  ☐ Add javascript (magnifier.. maybe)
+ ☐ Remove unknow (no name)
  ☐ tests
  ☐ Fill the db
  ☐ Deploy
