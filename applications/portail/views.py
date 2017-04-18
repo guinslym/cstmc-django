@@ -42,10 +42,6 @@ def language_set(language):
     else:
         return language.upper()
 
-class ArtefactHomeView(TemplateView):
-    template_name = 'portail/home_view.html'
-
-#formView
 
 class ArtefactListView(ListView):
     #context_object_name='artefacts'
