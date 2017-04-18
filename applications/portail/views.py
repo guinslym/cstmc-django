@@ -70,8 +70,17 @@ class ArtefactListView(ListView):
 class ArtefactHomeView(TemplateView):
     template_name = 'portail/home_view.html'
 
+class ArtefactDetailView(DetailView):
+    model = Artefact
+    template_name = 'portail/detail.html'
 
-class ArtefactSearchView(DetailView):
+    def get_context_data(self, **kwargs):
+        context = super(ArtefactDetailView, self).get_context_data(**kwargs)
+        context['now'] = datetime.now()
+        return context
+
+
+class ArtefactSearchView(TemplateView):
     model = Artefact
     template_name = 'portail/search.html'
 
@@ -80,7 +89,7 @@ class ArtefactSearchView(DetailView):
         context['now'] = datetime.now()
         return context
 
-class ArtefactAdvancedSearchView(DetailView):
+class ArtefactAdvancedSearchView(TemplateView):
     model = Artefact
     template_name = 'portail/search.html'
 

@@ -20,6 +20,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^portail/', include('applications.portail.urls', namespace='portail')),
+    url(r'^$', include('applications.portail.urls', namespace='portail')),
 ]
 
 if settings.DEBUG:
