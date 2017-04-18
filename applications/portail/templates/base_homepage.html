@@ -15,6 +15,7 @@
      <link href='https://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
 
      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
@@ -52,7 +53,14 @@ a:hover {
 html,
 body {
 /*css for full size background image*/
-  background: url("http://localhost:8000/static/img/1970.0454.001.aa.cs.png") no-repeat center center fixed; 
+/*
+camera-1149767_1280.jpg
+camera-711025_1280.jpg
+clock-tower-190677_1280.jpg
+car-2072471_1280.jpg
+
+*/
+  background: url("{% static background_image %}") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
