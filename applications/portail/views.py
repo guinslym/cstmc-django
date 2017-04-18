@@ -90,35 +90,3 @@ class ArtefactAdvancedSearchView(TemplateView):
     
 def robot_files(request, filename):
     return render(request, 'portail/'+filename, {}, content_type="text/plain")
-
-'''
-class LatestView(generic.ListView):
-    """Retrieve the latest jobs that Ottawa had
-    published these past 2 weeks
-    """
-    template_name='emplois/index.html'
-    paginate_by = 10
-    context_object_name='latest_jobs_list'
-
-    def language(self):
-        """Return the user default language"""
-        language = language_set(self.request.LANGUAGE_CODE)
-        return language
-
-    def get_queryset(self):
-        """
-        Return a list of Jobs that has a PUBLICATION DATE
-        within the past 2 weeks
-
-        Order: by PUBLICATION DATE
-        """
-        return Job.objects.filter(language=self.language(),
-        POSTDATE__gte=datetime.now()-timedelta(days=14)).order_by('EXPIRYDATE')
-
-    def get_context_data(self, **kwargs):
-        context = super(LatestView, self).get_context_data(
-            **kwargs)
-        context["posted_last_2_weeks"] = True
-        return context
-
-'''
