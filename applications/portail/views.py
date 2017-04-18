@@ -1,5 +1,6 @@
 from datetime import datetime
 from django.core.urlresolvers import reverse, reverse_lazy
+from django.shortcuts import render, get_object_or_404, redirect
 
 #Class Based View
 from django.views.generic.base import TemplateView
@@ -21,6 +22,15 @@ from django.contrib.messages.views import SuccessMessageMixin
 #models
 from applications.portail.models  import Artefact
 
+def robot_files(request, filename):
+    return render(request, 'portail/'+filename, {}, content_type="text/plain")
+
+
+def language_set(language):
+    if "-" in language:
+        return (language.split('-')[1]).upper()
+    else:
+        return language.upper()
 
 class ArtefactHomeView(TemplateView):
     template_name = 'portail/home_view.html'
@@ -47,12 +57,56 @@ class ArtefactListView(ListView):
         return self.request.GET.get('paginate_by', self.paginate_by)
 
 
-class ArtefactDetailView(DetailView):
+class ArtefactHomeView(TemplateView):
+    template_name = 'portail/home_view.html'
+
+
+class ArtefactSearchView(DetailView):
     model = Artefact
-    template_name = 'portail/detail.html'
+    template_name = 'portail/search.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ArtefactDetailView, self).get_context_data(**kwargs)
+        context = super(ArtefactSearchView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
 
+class ArtefactAdvancedSearchView(DetailView):
+    model = Artefact
+    template_name = 'portail/search.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ArtefactAdvancedSearchView, self).get_context_data(**kwargs)
+        context['now'] = datetime.now()
+        return context
+
+'''
+class LatestView(generic.ListView):
+    """Retrieve the latest jobs that Ottawa had
+    published these past 2 weeks
+    """
+    template_name='emplois/index.html'
+    paginate_by = 10
+    context_object_name='latest_jobs_list'
+
+    def language(self):
+        """Return the user default language"""
+        language = language_set(self.request.LANGUAGE_CODE)
+        return language
+
+    def get_queryset(self):
+        """
+        Return a list of Jobs that has a PUBLICATION DATE
+        within the past 2 weeks
+
+        Order: by PUBLICATION DATE
+        """
+        return Job.objects.filter(language=self.language(),
+        POSTDATE__gte=datetime.now()-timedelta(days=14)).order_by('EXPIRYDATE')
+
+    def get_context_data(self, **kwargs):
+        context = super(LatestView, self).get_context_data(
+            **kwargs)
+        context["posted_last_2_weeks"] = True
+        return context
+
+'''
