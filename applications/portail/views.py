@@ -1,4 +1,5 @@
 from datetime import datetime
+from random import randint
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -30,7 +31,7 @@ def get_background_image():
                 '1970.0454.001.aa.cs.jpg',#pompier
                 '1995.0268.001.aa.cs.jpg',#vase
             ]
-    return racine
+    return racine + image[randint(0,3)]
     
 def robot_files(request, filename):
     return render(request, 'portail/'+filename, {}, content_type="text/plain")
@@ -56,7 +57,13 @@ class ArtefactListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ArtefactListView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
+        context['background_image'] = get_background_image()
         return context
+        
+    def language(self):
+        """Return the user default language"""
+        language = language_set(self.request.LANGUAGE_CODE)
+        return language
 
     def get_queryset(self):
         #return Artefact.objects.select_related('author')
@@ -79,14 +86,21 @@ class ArtefactDetailView(DetailView):
         context['now'] = datetime.now()
         return context
 
-
-class ArtefactSearchView(TemplateView):
+class ArtefactHomePageSearchView(TemplateView):
     model = Artefact
     template_name = 'portail/search.html'
 
+    def language(self):
+        """Return the user default language"""
+        language = language_set(self.request.LANGUAGE_CODE)
+        return language
+
     def get_context_data(self, **kwargs):
-        context = super(ArtefactSearchView, self).get_context_data(**kwargs)
+        context = super(
+                    ArtefactHomePageSearchView, self
+                ).get_context_data(**kwargs)
         context['now'] = datetime.now()
+        context['background_image'] = get_background_image()
         return context
 
 class ArtefactAdvancedSearchView(TemplateView):
@@ -95,7 +109,7 @@ class ArtefactAdvancedSearchView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ArtefactAdvancedSearchView, self).get_context_data(**kwargs)
-        context['now'] = datetime.now()
+        context['background_image'] = get_background_image()
         return context
 
 '''
