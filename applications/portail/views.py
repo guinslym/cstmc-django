@@ -59,7 +59,7 @@ class ArtefactListView(ListView):
         context['now'] = datetime.now()
         context['background_image'] = get_background_image()
         return context
-        
+
     def language(self):
         """Return the user default language"""
         language = language_set(self.request.LANGUAGE_CODE)
@@ -74,8 +74,7 @@ class ArtefactListView(ListView):
         return self.request.GET.get('paginate_by', self.paginate_by)
 
 
-class ArtefactHomeView(TemplateView):
-    template_name = 'portail/home_view.html'
+
 
 class ArtefactDetailView(DetailView):
     model = Artefact
@@ -86,9 +85,9 @@ class ArtefactDetailView(DetailView):
         context['now'] = datetime.now()
         return context
 
-class ArtefactHomePageSearchView(TemplateView):
+class ArtefactHomeView(TemplateView):
     model = Artefact
-    template_name = 'portail/search.html'
+    template_name = 'base_homepage.html'
 
     def language(self):
         """Return the user default language"""
@@ -97,7 +96,7 @@ class ArtefactHomePageSearchView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(
-                    ArtefactHomePageSearchView, self
+                    ArtefactHomeView, self
                 ).get_context_data(**kwargs)
         context['now'] = datetime.now()
         context['background_image'] = get_background_image()
