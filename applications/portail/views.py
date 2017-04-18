@@ -101,14 +101,25 @@ class ArtefactHomeView(TemplateView):
         context['background_image'] = get_background_image()
         return context
 
+
 class ArtefactAdvancedSearchView(TemplateView):
     model = Artefact
-    template_name = 'portail/search.html'
+    template_name = 'portail/homepage.html'
+
+    def language(self):
+        """Return the user default language"""
+        language = language_set(self.request.LANGUAGE_CODE)
+        return language
 
     def get_context_data(self, **kwargs):
-        context = super(ArtefactAdvancedSearchView, self).get_context_data(**kwargs)
+        context = super(
+                    ArtefactAdvancedSearchView, self
+                ).get_context_data(**kwargs)
+        context['now'] = datetime.now()
         context['background_image'] = get_background_image()
         return context
+
+
 
 '''
 class LatestView(generic.ListView):
