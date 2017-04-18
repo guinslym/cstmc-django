@@ -1,5 +1,4 @@
 from datetime import datetime
-from random import randint
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -23,24 +22,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 #models
 from applications.portail.models  import Artefact
 
-def get_background_image():
-    image = [
-                'camera-1149767_1280.jpg',
-                'camera-711025_1280.jpg',
-                'clock-tower-190677_1280.jpg',
-                'car-2072471_1280.jpg',
-            ]
-    return 'img/'+image[randint(0,3)]
+#utils.py
+from applications.portail.utils import get_background_image, language_set
+
     
 def robot_files(request, filename):
     return render(request, 'portail/'+filename, {}, content_type="text/plain")
 
-
-def language_set(language):
-    if "-" in language:
-        return (language.split('-')[1]).upper()
-    else:
-        return language.upper()
 
 
 class ArtefactListView(ListView):
