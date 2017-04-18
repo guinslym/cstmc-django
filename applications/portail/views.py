@@ -22,6 +22,16 @@ from django.contrib.messages.views import SuccessMessageMixin
 #models
 from applications.portail.models  import Artefact
 
+def get_background_image():
+    racine = 'http://source.techno-science.ca/images/'
+    image = [
+                '1989.0047.001.aa.cs.jpg',#transmetteur
+                '1993.0300.001.aa.cs.jpg',#dactylo
+                '1970.0454.001.aa.cs.jpg',#pompier
+                '1995.0268.001.aa.cs.jpg',#vase
+            ]
+    return racine
+    
 def robot_files(request, filename):
     return render(request, 'portail/'+filename, {}, content_type="text/plain")
 
