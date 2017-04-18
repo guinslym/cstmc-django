@@ -25,9 +25,6 @@ from applications.portail.models  import Artefact
 #utils.py
 from applications.portail.utils import get_background_image, language_set
 
-    
-def robot_files(request, filename):
-    return render(request, 'portail/'+filename, {}, content_type="text/plain")
 
 class ArtefactListView(ListView):
     #context_object_name='artefacts'
@@ -38,7 +35,6 @@ class ArtefactListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ArtefactListView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
-        context['background_image'] = get_background_image()
         return context
 
     def language(self):
@@ -58,11 +54,6 @@ class ArtefactDetailView(DetailView):
     model = Artefact
     template_name = 'portail/detail.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(ArtefactDetailView, self).get_context_data(**kwargs)
-        context['background_image'] = get_background_image()
-        return context
-
 class ArtefactHomeView(TemplateView):
     model = Artefact
     template_name = 'portail/homepage.html'
@@ -76,7 +67,6 @@ class ArtefactHomeView(TemplateView):
         context = super(
                     ArtefactHomeView, self
                 ).get_context_data(**kwargs)
-        context['now'] = datetime.now()
         context['background_image'] = get_background_image()
         return context
 
@@ -94,11 +84,12 @@ class ArtefactAdvancedSearchView(TemplateView):
         context = super(
                     ArtefactAdvancedSearchView, self
                 ).get_context_data(**kwargs)
-        context['now'] = datetime.now()
         context['background_image'] = get_background_image()
         return context
 
-
+    
+def robot_files(request, filename):
+    return render(request, 'portail/'+filename, {}, content_type="text/plain")
 
 '''
 class LatestView(generic.ListView):
