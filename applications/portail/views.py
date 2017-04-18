@@ -86,7 +86,7 @@ class ArtefactDetailView(DetailView):
 
 class ArtefactHomeView(TemplateView):
     model = Artefact
-    template_name = 'base_homepage.html'
+    template_name = 'portail/homepage.html'
 
     def language(self):
         """Return the user default language"""

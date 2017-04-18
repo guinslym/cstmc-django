@@ -1,1 +1,15 @@
-<h1>Homepage View</h1>
+{% extends 'base_homepage.html' %}
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+
+  {% block content %}
+       <form accept-charset="UTF-8" action="{#% seach_form_url request.build_absolute_uri LANGUAGE_CODE  %#}" class="form-group main-form" id="search-form" method="get">
+       {% csrf_token %}
+          <div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+          <input class="form-group main-form" id="q_objname_en_cont" name="searchKey"  placeholder='{%trans "Search by Job title"%}' required="required" style="height:40px;width:60%" type="search">
+          <input class="btn btn-warning" type="submit" value="{% trans 'Search' %}">
+       </form>
+
+  {% endblock %}
