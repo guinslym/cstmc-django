@@ -29,8 +29,6 @@ from applications.portail.utils import get_background_image, language_set
 def robot_files(request, filename):
     return render(request, 'portail/'+filename, {}, content_type="text/plain")
 
-
-
 class ArtefactListView(ListView):
     #context_object_name='artefacts'
     paginate_by = 10
@@ -56,16 +54,13 @@ class ArtefactListView(ListView):
         """ Paginate by specified value in querystring, or use default class property value.  """
         return self.request.GET.get('paginate_by', self.paginate_by)
 
-
-
-
 class ArtefactDetailView(DetailView):
     model = Artefact
     template_name = 'portail/detail.html'
 
     def get_context_data(self, **kwargs):
         context = super(ArtefactDetailView, self).get_context_data(**kwargs)
-        context['now'] = datetime.now()
+        context['background_image'] = get_background_image()
         return context
 
 class ArtefactHomeView(TemplateView):
