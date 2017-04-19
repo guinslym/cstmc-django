@@ -28,6 +28,47 @@ Miscelleanous:
  ☐ Python: Detect if it's a color image or B&W image
    ☐ http://stackoverflow.com/questions/20068945/detect-if-image-is-color-grayscale-or-black-and-white-with-python-pil
    ☐ http://stackoverflow.com/questions/14041562/python-pil-detect-if-an-image-is-completely-black-or-white
+
+Journal:
+ ☐ How can I upgrade my productivity in Web development?
+ ☐ Do up to 6 times an Example
+ ☐ Do a tutorial ahead of time (ex. Angular & Django)
+ ☐ Read about it
+ ☐ Find example
+ ☐ Recreate the step without doing the app
+
+If I had to redo this app, how can I improve my productivity?:
+ ☐ Always use MVP
+ ☐ Use a project template (settings/requirements)
+ ☐ Do Sketch/Story Board
+ ☐ Take pictures of your Sketch
+ ☐ Set tasks
+ ☐ Find 1 Motto (per day)
+ ☐ Always set a timer for each task
+ ☐ A task is like an exam's question if I'm stuck on it, pass and do another question.
+ ☐ Do what you are interested in doing
+ ☐ Do a View for each Sketch/Story Board
+ ☐ Documented your Sketch/Story Board by pointing the Views or the URLs associated
+ ☐ Always use Views/Urls/Template(hello world) for all from the Sketch/Story Board
+ ☐ Do the Views even if I don't use them (put them in views_utils.js)
+ ☐ Clearer html project template with proper filename or namespace
+ ☐ Always look at the Sketchboard
+ ☐ Focus on Views (process) and Templates (i.e form)
+ ☐ Template: Don't focus on color and finding the proper images
+ ☐ Do more 3x time on Views and Urls and Templatetags than on Templates
+ ☐ First step:
+   ☐ Do 3x time on Models; 2x time on Views and 1x time on template
+ ☐ Second step
+   ☐ Do 4x time on Views (with HttpResponse) and 2x time on Templates
+ ☐ Third step
+   ☐ Do 3x time on Templates and 1x time on Views
+ ☐ When I feel down or doesn't want to work 
+   ☐ Look at the story board and rewrite it
+   ☐ Redo the app
+   ☐ Write down the steps that I took
+   ☐ Create a folder dtimes time in your project
+   ☐ Do a presentation (Powerpoint) about your project
+
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Page to DetailPage (should be blank) @done (17-04-14 20:18) @project(todo)
