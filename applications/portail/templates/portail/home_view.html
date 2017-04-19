@@ -51,7 +51,7 @@
 			{% for artefact in object_list %}
 				<li class="mix {% get_options %}">
 					<a href="{% url 'portail:artefact_detail' artefact.id %}">
-						<img src="{% static 'img/img-1.jpg' %}" alt="{{ artefact.id}}">
+						<img src="{{artefact.image}}" alt="{{ artefact.id}}">
 					</a>
 				</li>
 			{% endfor %}
