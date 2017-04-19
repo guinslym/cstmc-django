@@ -25,6 +25,9 @@ Miscelleanous:
  ☐ Search the Museum and Art Collection Database 
  ☐ cstmc-collection.ca 15$
  ☐ cstmc.info 15$
+ ☐ Python: Detect if it's a color image or B&W image
+   ☐ http://stackoverflow.com/questions/20068945/detect-if-image-is-color-grayscale-or-black-and-white-with-python-pil
+   ☐ http://stackoverflow.com/questions/14041562/python-pil-detect-if-an-image-is-completely-black-or-white
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Page to DetailPage (should be blank) @done (17-04-14 20:18) @project(todo)
