@@ -93,6 +93,7 @@ class ArtefactAdvancedSearchView(ListView):
                         ObjectName__icontains\
                         = keyword,language__icontains=lang).\
                         order_by('-POSTDATE')
+                #return render(request, self.template_name, {'form': form})
                 return render(request,'portail/home_view.html',
                                 {'artefacts':object_list,
                                 'language_switcher_off':True})
