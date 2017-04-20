@@ -1,6 +1,7 @@
 from datetime import datetime
 from django.core.urlresolvers import reverse, reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 #Class Based View
 from django.views.generic.base import TemplateView
@@ -43,24 +44,59 @@ def artefact_search(request):
                 return redirect('/')
         else:
             lang = language_set(request.LANGUAGE_CODE)
-            artefacts_found = Artefact.objects.filter(
+            object_list = Artefact.objects.filter(
                     ObjectName__icontains\
                     = keyword,language__icontains=lang).\
                     order_by('-POSTDATE')
-            paginator = Paginator(artefacts_found, 10)
+            paginator = Paginator(object_list, 10)
             page = request.GET.get('page')
             try:
-                artefacts_found = paginator.page(page)
+                object_list = paginator.page(page)
             except PageNotAnInteger:
                 # If page is not an integer, deliver first page.
-                artefacts_found = paginator.page(1)
+                object_list = paginator.page(1)
             except EmptyPage:
                 # If page is out of range (e.g. 9999), deliver last page of results.
-                artefacts_found = paginator.page(paginator.num_pages)
-            return render(request,'portail/result.html',
-                            {'artefacts':artefacts_found,
+                object_list = paginator.page(paginator.num_pages)
+            return render(request,'portail/home_view.html',
+                            {'artefacts':object_list,
                             'language_switcher_off':True})
     return redirect('/')
+
+
+
+class ArtefactAdvancedSearchView(ListView):
+    model = Artefact
+    paginate_by = 10
+    template_name = 'portail/home_view.html'
+
+    def language(self):
+        """Return the user default language"""
+        language = language_set(self.request.LANGUAGE_CODE)
+        return language
+
+    def get_context_data(self, **kwargs):
+        context = super(
+                    ArtefactAdvancedSearchView, self
+                ).get_context_data(**kwargs)
+        context['background_image'] = get_background_image()
+        return context
+
+    def get(self):
+        if 'searchKey' in self.request.GET:
+            keyword = request.GET['searchKey']
+            if not keyword :
+                    return redirect('/')
+            else:
+                lang = language_set(request.LANGUAGE_CODE)
+                object_list = Artefact.objects.filter(
+                        ObjectName__icontains\
+                        = keyword,language__icontains=lang).\
+                        order_by('-POSTDATE')
+                return render(request,'portail/home_view.html',
+                                {'artefacts':object_list,
+                                'language_switcher_off':True})
+        return redirect('/')
 
 class ArtefactListView(ListView):
     #context_object_name='artefacts'
@@ -106,22 +142,6 @@ class ArtefactHomeView(TemplateView):
         context['background_image'] = get_background_image()
         return context
 
-
-class ArtefactAdvancedSearchView(TemplateView):
-    model = Artefact
-    template_name = 'portail/homepage.html'
-
-    def language(self):
-        """Return the user default language"""
-        language = language_set(self.request.LANGUAGE_CODE)
-        return language
-
-    def get_context_data(self, **kwargs):
-        context = super(
-                    ArtefactAdvancedSearchView, self
-                ).get_context_data(**kwargs)
-        context['background_image'] = get_background_image()
-        return context
 
     
 def robot_files(request, filename):

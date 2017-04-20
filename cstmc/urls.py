@@ -20,7 +20,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    #url(r'^portail/', include('applications.portail.urls', namespace='portail')),
+    url(r'^portail/', include('applications.portail.urls', namespace='portail')),
     url(r'^$', include('applications.portail.urls', namespace='portail')),
 ]
 

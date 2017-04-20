@@ -13,7 +13,7 @@ from applications.portail.views import (
 
 
 urlpatterns = [
-   url(r'^home/$', ArtefactListView.as_view(), name='artefact_home'),
+   url(r'^home/$', ArtefactHomeView.as_view(), name='artefact_home'),
    url(r'^search/$', artefact_search, name='artefact_search'),
    url(r'^(?P<pk>\d+)/$', ArtefactDetailView.as_view(), name='artefact_detail'),
    url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='home-files'),
