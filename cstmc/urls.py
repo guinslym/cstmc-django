@@ -32,9 +32,6 @@ urlpatterns = [
 '''
 
 urlpatterns += i18n_patterns(
-    url(r'^emplois/', include('applications.emplois.urls', namespace="emplois")),
-    url(r'^', include('applications.emplois.urls')),
-
     # i18n
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes': False}),

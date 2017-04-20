@@ -31,3 +31,8 @@ def create_comment(user, product):
         comment = mixer.blend(Comment, author=user, product=product)
 
 """
+
+artefacts = Artefact.objects.all()
+for art in artefacts:
+    if len(art.image) < 10:
+        art.delete()
