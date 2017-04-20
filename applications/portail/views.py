@@ -88,7 +88,7 @@ class ArtefactAdvancedSearchView(ListView):
             if not keyword :
                     return redirect('/')
             else:
-                lang = language_set(request.LANGUAGE_CODE)
+                lang = language_set(self.request.LANGUAGE_CODE)
                 object_list = Artefact.objects.filter(
                         ObjectName__icontains\
                         = keyword,language__icontains=lang).\
