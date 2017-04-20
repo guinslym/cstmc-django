@@ -21,6 +21,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^portail/', include('applications.portail.urls', namespace='portail')),
+    url(r'^$', include('applications.portail.urls', namespace='portail')),
 ]
 
 '''
@@ -29,16 +30,15 @@ urlpatterns = [
     url(r'^searchJobs/$', cache_page(60 * 15)('applications.emplois.views.job_search'), name='job_search'),
     url(r'^update/(?P<password>[A-Za-z0-9]+)$', update_and_tweets, name='upgrade'),
 ]
-'''
+
 
 urlpatterns += i18n_patterns(
     # i18n
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, 'show_indexes': False}),
 
-    url(r'^$', include('applications.portail.urls', namespace='portail')),
 )# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+'''
 handler404 = 'applications.portail.views.handler404'
 handler500 = 'applications.portail.views.handler500'
 
