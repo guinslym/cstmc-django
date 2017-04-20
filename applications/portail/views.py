@@ -25,6 +25,10 @@ from applications.portail.models  import Artefact
 #utils.py
 from applications.portail.utils import get_background_image, language_set
 
+#logging
+import logging
+logger = logging.getLogger(__name__)
+
 #http://localhost:8001/emplois/searchJobs/<searchKey>
 #@cache_page(60 * 1, key_prefix="site1"  )
 def artefact_search(request):
@@ -122,3 +126,18 @@ class ArtefactAdvancedSearchView(TemplateView):
     
 def robot_files(request, filename):
     return render(request, 'portail/'+filename, {}, content_type="text/plain")
+
+
+
+def handler404(request):
+    response = render(request, 'emplois/page_not_found.html')
+    logger.info('Error page not found 404')
+    response.status_code = 404
+    return response
+
+
+def handler500(request):
+    response = render(request, 'emplois/server_error.html')
+    logger.info('Error page not found 500')
+    response.status_code = 500
+    return response
