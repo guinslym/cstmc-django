@@ -25,6 +25,38 @@ from applications.portail.models  import Artefact
 #utils.py
 from applications.portail.utils import get_background_image, language_set
 
+#http://localhost:8001/emplois/searchJobs/<searchKey>
+#@cache_page(60 * 1, key_prefix="site1"  )
+def artefact_search(request):
+    """
+    This function will receive a query
+    from the Search Box and will return a list of
+    jobs from that query
+    """
+    if 'searchKey' in request.GET:
+        keyword = request.GET['searchKey']
+        if not keyword :
+                return redirect('/')
+        else:
+            lang = language_set(request.LANGUAGE_CODE)
+            artefacts_found = Artefact.objects.filter(
+                    ObjectName__icontains\
+                    = keyword,language__icontains=lang).\
+                    order_by('-POSTDATE')
+            paginator = Paginator(artefacts_found, 10)
+            page = request.GET.get('page')
+            try:
+                artefacts_found = paginator.page(page)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                artefacts_found = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                artefacts_found = paginator.page(paginator.num_pages)
+            return render(request,'portail/result.html',
+                            {'artefacts':artefacts_found,
+                            'language_switcher_off':True})
+    return redirect('/')
 
 class ArtefactListView(ListView):
     #context_object_name='artefacts'
