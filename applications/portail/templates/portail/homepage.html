@@ -4,12 +4,12 @@
 {% load i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 
-  {% block content %}
-       <form accept-charset="UTF-8" action="{% artefact_search request.build_absolute_uri LANGUAGE_CODE  %}" class="form-group main-form" id="search-form" method="get">
-       {% csrf_token %}
-          <div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
-          <input class="form-group main-form" id="q_objname_en_cont" name="searchKey"  placeholder='{%trans "Search an Artefacts by its name "%}' required="required" style="height:40px;width:60%" type="search">
-          <input class="btn btn-warning" type="submit" value="{% trans 'Search' %}">
-       </form>
+{% block content %}
+<form accept-charset="UTF-8" action="/search" class="form-group main-form" id="search-form" method="get">
+{% csrf_token %}
+  <div style="display:none"><input name="utf8" type="hidden" value="✓"></div>
+  <input class="form-group main-form" id="q_objname_en_cont" name="searchKey"  placeholder='{%trans "Search an Artefacts by its name "%}' required="required" style="height:40px;width:60%;color:black;" type="search">
+  <input class="btn btn-warning" type="submit" value="{% trans 'Search' %}">
+</form>
 
-  {% endblock %}
+{% endblock %}
