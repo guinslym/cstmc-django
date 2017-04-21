@@ -69,35 +69,20 @@ class ArtefactAdvancedSearchView(ListView):
     model = Artefact
     paginate_by = 10
     template_name = 'portail/home_view.html'
+    keywords = ''
 
-    def language(self):
-        """Return the user default language"""
-        language = language_set(self.request.LANGUAGE_CODE)
-        return language
+    def get(self, request, *args, **kwargs):
+        self.temp = request.GET.get('searchKey')
+        return super(ArtefactAdvancedSearchView, self).get(request, *args, **kwargs)
 
-    def get_context_data(self, **kwargs):
-        context = super(
-                    ArtefactAdvancedSearchView, self
-                ).get_context_data(**kwargs)
-        context['background_image'] = get_background_image()
-        return context
-
-    def get(self):
-        if 'searchKey' in self.request.GET:
-            keyword = request.GET['searchKey']
-            if not keyword :
-                    return redirect('/')
-            else:
-                lang = language_set(self.request.LANGUAGE_CODE)
-                object_list = Artefact.objects.filter(
-                        ObjectName__icontains\
-                        = keyword,language__icontains=lang).\
-                        order_by('-POSTDATE')
-                #return render(request, self.template_name, {'form': form})
-                return render(request,'portail/home_view.html',
-                                {'artefacts':object_list,
-                                'language_switcher_off':True})
-        return redirect('/')
+    def get_queryset(self):
+        #return Artefact.objects.select_related('author')
+        artefacts  = Artefact.objects.filter(
+                    ObjectName__icontains\
+                    = self.keywords).\
+                    order_by('-id')
+        #import ipdb;ipdb.set_trace()
+        return artefacts
 
 class ArtefactListView(ListView):
     #context_object_name='artefacts'
