@@ -31,40 +31,6 @@ import logging
 logger = logging.getLogger(__name__)
 
 #http://localhost:8001/emplois/searchJobs/<searchKey>
-#@cache_page(60 * 1, key_prefix="site1"  )
-def artefact_search(request):
-    """
-    This function will receive a query
-    from the Search Box and will return a list of
-    jobs from that query
-    """
-    if 'searchKey' in request.GET:
-        keyword = request.GET['searchKey']
-        if not keyword :
-                return redirect('/')
-        else:
-            lang = language_set(request.LANGUAGE_CODE)
-            object_list = Artefact.objects.filter(
-                    ObjectName__icontains\
-                    = keyword,language__icontains=lang).\
-                    order_by('-POSTDATE')
-            paginator = Paginator(object_list, 10)
-            page = request.GET.get('page')
-            try:
-                object_list = paginator.page(page)
-            except PageNotAnInteger:
-                # If page is not an integer, deliver first page.
-                object_list = paginator.page(1)
-            except EmptyPage:
-                # If page is out of range (e.g. 9999), deliver last page of results.
-                object_list = paginator.page(paginator.num_pages)
-            return render(request,'portail/home_view.html',
-                            {'artefacts':object_list,
-                            'language_switcher_off':True})
-    return redirect('/')
-
-
-
 class ArtefactAdvancedSearchView(ListView):
     model = Artefact
     paginate_by = 10
@@ -72,8 +38,26 @@ class ArtefactAdvancedSearchView(ListView):
     keywords = ''
 
     def get(self, request, *args, **kwargs):
-        self.temp = request.GET.get('searchKey')
+        self.keywords = request.GET.get('searchKey')
         return super(ArtefactAdvancedSearchView, self).get(request, *args, **kwargs)
+
+    def get_queryset(self):
+        artefacts  = Artefact.objects.filter(
+                    ObjectName__icontains\
+                    = self.keywords).\
+                    order_by('-id')
+        return artefacts
+        
+#http://localhost:8001/emplois/searchJobs/<searchKey>
+class ArtefactSearchView(ListView):
+    model = Artefact
+    paginate_by = 10
+    template_name = 'portail/home_view.html'
+    keywords = ''
+
+    def get(self, request, *args, **kwargs):
+        self.keywords = request.GET.get('searchKey')
+        return super(ArtefactSearchView, self).get(request, *args, **kwargs)
 
     def get_queryset(self):
         #return Artefact.objects.select_related('author')
