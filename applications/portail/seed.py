@@ -36,3 +36,44 @@ artefacts = Artefact.objects.all()
 for art in artefacts:
     if len(art.image) < 10:
         art.delete()
+    elif len(art.ObjectName) =='':
+        art.delete()
+
+#Javascript changing name (5)
+art_name = [i.ObjectName for i in artefacts]
+
+from collections import Counter
+Counter(art_name)
+
+a = Artefact.objects.first()
+a._meta.get_all_field_names()
+
+#delete all unknown name
+
+artefacts = Artefact.objects.all()
+
+#List of materials
+art_material = [i.material for i in artefacts]
+aa=[]
+for i in art_material:
+    if '->' in i:
+        i = i.split('->')
+        for a in i:
+            if ';' in a:
+                a = a.split(';')
+                print('a {0}'.format(a))
+    elif ';' in i:
+        i = i.split(';')
+    print(i)
+
+#Top 4 Country and Others
+art_country = [i.ManuCountry for i in artefacts]
+
+#All color-1 color-2 (All Countries; Canada; (USA)
+
+#group1
+art_group = [i.group1 for i in artefacts]
+
+
+#category1
+art_category1 = [i.category1 for i in artefacts]
