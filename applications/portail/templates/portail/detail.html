@@ -1,4 +1,4 @@
-{% extends 'base_Detail.html' %}
+{% extends 'base_detail.html' %}
 {% load static %}
 {% load portail_extras %}
 {% load bootstrap_pagination %}
@@ -14,13 +14,102 @@
 		<div class="col-lg-8">
 			<table class="table">
 				<tr>
-				<td>hello</td>
-				<td>hello</td>
+					<td>ObjectName</td>
+					<td>{{object.ObjectName}}</td>
+				</tr>
+				<tr>
+					<td>IDNO</td>
+					<td>{{object.IDNO}}</td>
+				</tr>
+				<tr>
+					<td>GeneralDescription</td>
+					<td>{{object.GeneralDescription}}</td>
+				</tr>
+				<tr>
+					<td>model</td>
+					<td>{{object.model}}</td>
+				</tr>
+				<tr>
+					<td>SerialNumber</td>
+					<td>{{object.SerialNumber}}</td>
+				</tr>
+				<tr>
+					<td>Manufacturer</td>
+					<td>{{object.Manufacturer}}</td>
+				</tr>
+				<tr>
+					<td>ManuCountry</td>
+					<td>{{object.ManuCountry}}</td>
+				</tr>
+				<tr>
+					<td>ManuProvince</td>
+					<td>{{object.ManuProvince}}</td>
+				</tr>
+				<tr>
+					<td>ManuCity</td>
+					<td>{{object.ManuCity}}</td>
+				</tr>
+				<tr>
+					<td>BeginDate</td>
+					<td>{{object.BeginDate}}</td>
+				</tr>
+				<tr>
+					<td>EndDate</td>
+					<td>{{object.EndDate}}</td>
+				</tr>
+				<tr>
+					<td>date_qualifier</td>
+					<td>{{object.date_qualifier}}</td>
+				</tr>
+				<tr>
+					<td>patent</td>
+					<td>{{object.patent}}</td>
+				</tr>
+				<tr>
+					<td>NumberOfComponents</td>
+					<td>{{object.NumberOfComponents}}</td>
+				</tr>
+				<tr>
+					<td>ArtifactFinish</td>
+					<td>{{object.ArtifactFinish}}</td>
+				</tr>
+				<tr>
+					<td>ContextCanada</td>
+					<td>{{object.ContextCanada}}</td>
+				</tr>
+				<tr>
+					<td>ArtifactFinish</td>
+					<td>{{object.ArtifactFinish}}</td>
+				</tr>
+				<tr>
+					<td>ContextCanada</td>
+					<td>{{object.ContextCanada}}</td>
+				</tr>
+				<tr>
+					<td>ContextFunction</td>
+					<td>{{object.ContextFunction}}</td>
+				</tr>
+				<tr>
+					<td>ContextTechnical</td>
+					<td>{{object.ContextTechnical}}</td>
+				</tr>
+				<tr>
+					<td>ContextFunction</td>
+					<td>{{object.ContextFunction}}</td>
+				</tr>
+				<tr>
+					<td>group1</td>
+					<td>{{object.group1}}</td>
+				</tr>
+				<tr>
+					<td>category1</td>
+					<td>{{object.category1}}</td>
 				</tr>
 			</table>
 		</div>		
 	</div>
 </div>
+
 
 
 {% endblock %}
