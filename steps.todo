@@ -1,6 +1,6 @@
 todo:
  ✔ Homepage @done (17-04-18 19:39)
- ☐ Creating SearchFormPage (simple)
+ ✔ Creating SearchFormPage (simple) @done (17-04-20 21:44)
  ☐ Manage Materials (db) (templatetags)
  ☐ Manage Category (db) (templatetags) (Breaks)
  ☐ ListView (Add pagination - bootstrap) (Add in a section and use other fonts)
@@ -11,7 +11,7 @@ todo:
  ☐ Detail page (do the table and layout)
  ☐ 
  ☐ Redo the db (maybe 2 or 3 table at most)
- ☐ Translation (no more  - About page)
+ ✔ Translation (no more  - About page) @done (17-04-20 21:45)
  ☐ Manage Color (To remove for now)
  ☐ Add javascript (magnifier.. maybe)
  ☐ Remove unknow (no name)
@@ -20,8 +20,8 @@ todo:
  ☐ Deploy
  ☐ 3 hrs max (got other things todo $$$$$$$$$ think Big)
  ☐ https://github.com/guinslym/cstmc_code2015
- ☐ Download detail page in PDF
- ☐ Download image 
+ ✔ Download detail page in PDF @done (17-04-20 21:45)
+ ☐ Download image
 
 Miscelleanous:
  ☐ Search the Museum and Art Collection Database 
