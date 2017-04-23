@@ -7,6 +7,11 @@
 
 {% block content %}
 
+<style type="text/css">
+	tr.description td:first-child, {
+    font-weight: bolder !important;
+}
+</style>
     <div class="jumbotron">
       <div class="container">
         <h1>{{object.ObjectName}} </h1>
@@ -18,123 +23,126 @@
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 
+		<div class="card" style="box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;">
+			
 			<img src="{{object.image}}" alt="image of {{object.ObjectName}}" class="img-responsive img-rounded" >
+		</div>
 
-			<table class="table table-striped table-bordered table-hover">
+			<table class="description table table-striped table-bordered table-hover">
 				<tr>
-					<td>ObjectName</td>
+					<td><strong>ObjectName</strong></td>
 					<td>{{object.ObjectName}}</td>
 				</tr>
 				<tr>
-					<td>IDNO</td>
+					<td><strong>IDNO</strong></td>
 					<td>{{object.IDNO}}</td>
 				</tr>
 				<tr>
-					<td>GeneralDescription</td>
+					<td><strong>GeneralDescription</strong></td>
 					<td>{{object.GeneralDescription}}</td>
 				</tr>
 				<tr>
-					<td>model</td>
+					<td><strong>model</strong></td>
 					<td>{{object.model}}</td>
 				</tr>
 				<tr>
-					<td>SerialNumber</td>
+					<td><strong>SerialNumber</strong></td>
 					<td>{{object.SerialNumber}}</td>
 				</tr>
 				<tr>
-					<td>Manufacturer</td>
+					<td><strong>Manufacturer</strong></td>
 					<td>{{object.Manufacturer}}</td>
 				</tr>
 				<tr>
-					<td>ManuCountry</td>
+					<td><strong>ManuCountry</strong></td>
 					<td>{{object.ManuCountry}}</td>
 				</tr>
 				<tr>
-					<td>ManuProvince</td>
+					<td><strong>ManuProvince</strong></td>
 					<td>{{object.ManuProvince}}</td>
 				</tr>
 				<tr>
-					<td>ManuCity</td>
+					<td><strong>ManuCity</strong></td>
 					<td>{{object.ManuCity}}</td>
 				</tr>
 				<tr>
-					<td>BeginDate</td>
+					<td><strong>BeginDate</strong></td>
 					<td>{{object.BeginDate}}</td>
 				</tr>
 				<tr>
-					<td>EndDate</td>
+					<td><strong>EndDate</strong></td>
 					<td>{{object.EndDate}}</td>
 				</tr>
 				<tr>
-					<td>date_qualifier</td>
+					<td><strong>date_qualifier</strong></td>
 					<td>{{object.date_qualifier}}</td>
 				</tr>
 				<tr>
-					<td>patent</td>
+					<td><strong>patent</strong></td>
 					<td>{{object.patent}}</td>
 				</tr>
 				<tr>
-					<td>NumberOfComponents</td>
+					<td><strong>NumberOfComponents</strong></td>
 					<td>{{object.NumberOfComponents}}</td>
 				</tr>
 				<tr>
-					<td>ArtifactFinish</td>
+					<td><strong>ArtifactFinish</strong></td>
 					<td>{{object.ArtifactFinish}}</td>
 				</tr>
 				<tr>
-					<td>ContextCanada</td>
+					<td><strong>ContextCanada</strong></td>
 					<td>{{object.ContextCanada}}</td>
 				</tr>
 				<tr>
-					<td>ArtifactFinish</td>
+					<td><strong>ArtifactFinish</strong></td>
 					<td>{{object.ArtifactFinish}}</td>
 				</tr>
 				<tr>
-					<td>ContextCanada</td>
+					<td><strong>ContextCanada</strong></td>
 					<td>{{object.ContextCanada}}</td>
 				</tr>
 				<tr>
-					<td>ContextFunction</td>
+					<td><strong>ContextFunction</strong></td>
 					<td>{{object.ContextFunction}}</td>
 				</tr>
 				<tr>
-					<td>ContextTechnical</td>
+					<td><strong>ContextTechnical</strong></td>
 					<td>{{object.ContextTechnical}}</td>
 				</tr>
 				<tr>
-					<td>ContextFunction</td>
+					<td><strong>ContextFunction</strong></td>
 					<td>{{object.ContextFunction}}</td>
 				</tr>
 				<tr>
-					<td>group1</td>
+					<td><strong>group1</strong></td>
 					<td>{{object.group1}}</td>
 				</tr>
 				<tr>
-					<td>category1</td>
+					<td><strong>category1</strong></td>
 					<td>{{object.category1}}</td>
 				</tr>
 				<tr>
-					<td>Length</td>
+					<td><strong>Length</strong></td>
 					<td>{{object.Length}}</td>
 				</tr>
 				<tr>
-					<td>Width</td>
+					<td><strong>Width</strong></td>
 					<td>{{object.Width}}</td>
 				</tr>
 				<tr>
-					<td>Height</td>
+					<td><strong>Height</strong></td>
 					<td>{{object.Height}}</td>
 				</tr>
 				<tr>
-					<td>Thickness</td>
+					<td><strong>Thickness</strong></td>
 					<td>{{object.Thickness}}</td>
 				</tr>
 				<tr>
-					<td>Weight</td>
+					<td><strong>Weight</strong></td>
 					<td>{{object.Weight}}</td>
 				</tr>
 				<tr>
-					<td>Diameter</td>
+					<td><strong>Diameter</strong></td>
 					<td>{{object.Diameter}}</td>
 				</tr>
 			</table>
