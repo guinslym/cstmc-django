@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+    Guinsly Mondesir -- Developer -- @guinslym
+
+# THANKS
+    Thanks to the Canada Science and Technology Museums Corporation
+    Thanks to the Open Data Book club Meetup and Open Data Ottawa
+
+# TECHNOLOGY
+    Django
+    Twitter Bootstrap
+    cstmc-collection.ca
+    cstmc.info

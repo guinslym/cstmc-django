@@ -14,8 +14,7 @@
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 
   </head>
@@ -48,15 +47,43 @@
   {% block content %}
   {% endblock %}
 
-    <footer>
-      <div class="col-lg-8 col-offset-2">
-        
-        <p>&copy; Mongex inc./ Guinsly Mond&eacute;sir Open Data</p>
-      </div>
+<style type="text/css">
+  .bs-docs-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 100px;
+    color: #99979c;
+    text-align: center;
+    background-color: #2a2730;
+}
+footer {
+    border-top: 10px solid #666;
+}
+ul li.footer {
+    display: inline;
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 10px;
+}
+</style>
+<footer class="bs-docs-footer" role="contentinfo">
+    <div class="container">
+        <ul class="bs-docs-footer-links">
+            <li class="footer"><a target="_blank" href="https://github.com/guinslym/cstmc-django">GitHub</a></li>
+            <li class="footer"><a target="_blank" href="/humans.txt">humans.txt</a></li>
+        </ul>
+        <p>Designed and built with all the love in the world by <a href="https://twitter.com/guinslym?lang=en" target="_blank">@guinslym</a>.
+        </p><p>Code licensed <a target="_blank" href="https://creativecommons.org/licenses/by-nd/3.0/">CC-BY-ND</a>.</p>
+    </div>
+</footer>
 
 
-      </footer>
-    </div> <!-- /container -->
+
+
+
+
+
+
 <!-- Button trigger modal -->
 
 
