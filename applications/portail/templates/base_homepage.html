@@ -12,11 +12,14 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
      <link href='https://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
 
+
      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
       {% include "portail/include/static.html" %}
 
       <style type="text/css">
@@ -42,10 +45,31 @@
 
 <div class="loading-mask"></div>
 
+
+ <h1 class="element">&nbsp;</h1>
+
   {% block content %}
   {% endblock %}
 
 
+<script>
+  $(function(){
+    //Documentation
+    //http://www.mattboldt.com/demos/typed-js/
+    new WOW().init();
+      $(".element").typed({
+        strings: ["^400CS^400TMC^400-^400collection^400.^400ca"],
+        //typeSpeed: 100,
+        backSpeed: 60,
+        cursorChar: "",
+        callback: function() {
+            $(".element").css("background-color", "rgba(0, 0, 0, 0.5)");
+        },
+      });
+
+
+  });
+</script>
 
     </div>
 </div>
