@@ -45,7 +45,21 @@ def get_objname():
 	art_name = random.sample(art_name, 20)
 	return '","'.join(art_name[:20])
 
-
+@register.simple_tag
+def get_most_common_objname():
+	'''More efficient function than get_objname'''
+	artefacts = Artefact.objects.all()
+	art_name = [i.ObjectName for i in artefacts]
+	results = Counter(art_name).most_common(30)
+	most_common_objname = []
+	for arts in results:
+		#tuple to list
+	    arts = list(arts)
+	    value = ["^400","^300","^200","^100"]
+	    #arts => ['clock', 10]
+	    most_common_objname.append(value[random.randint(0,3	)] + arts[0])
+	most_common_objname = random.sample(most_common_objname, 20)
+	return '","'.join(most_common_objname)
 ###########################################
 
 
