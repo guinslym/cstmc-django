@@ -40,10 +40,16 @@ for art in artefacts:
         art.delete()
 
 #Javascript changing name (5)
+
+artefacts = Artefact.objects.all()
 art_name = [i.ObjectName for i in artefacts]
 
 from collections import Counter
-Counter(art_name)
+results = Counter(art_name).most_common(11)
+for arts in results:
+    arts = list(arts)
+    if arts[0] != '':
+        print(arts)
 
 a = Artefact.objects.first()
 a._meta.get_all_field_names()
