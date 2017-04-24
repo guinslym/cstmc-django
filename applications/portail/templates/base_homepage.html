@@ -1,4 +1,4 @@
-{% load static %}{% load i18n %}{% load humanize %}
+{% load static %}{% load i18n %}{% load humanize %}{% load portail_extras %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,7 +23,10 @@
       {% include "portail/include/static.html" %}
 
       <style type="text/css">
-        
+        ul.advanced li
+        {
+          display: inline;
+        }
       </style>
   </head>
   <body>
@@ -46,7 +49,7 @@
 <div class="loading-mask"></div>
 
 
- <h1 class="element">&nbsp;</h1>
+ <h1 class="element" style="background-color:rgba(0, 0, 0, 0.5)" >&nbsp;</h1>
 
   {% block content %}
   {% endblock %}
@@ -64,6 +67,14 @@
         cursorChar: "",
         callback: function() {
             $(".element").css("background-color", "rgba(0, 0, 0, 0.5)");
+
+            $(".element2").typed({
+                    strings: ["{% get_objname %}"],
+                    //typeSpeed: 100,
+                    backSpeed: 60,
+                    cursorChar: ""
+                  });
+
         },
       });
 
