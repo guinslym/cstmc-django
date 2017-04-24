@@ -43,50 +43,93 @@ def get_objname():
 		value = ["^400","^300","^200","^100"]
 		art_name_with_milliseconds.append(value[random.randint(0,3	)] + str(obj))
 	shuffle(art_name_with_milliseconds)
-	return '","'.join(art_name)
+	return '","'.join(art_name[:20])
 
 @register.simple_tag
 def get_materials(artefact):
 	material_list_to_return = []
 	if 'glass' in artefact:
-		material_list_to_return.append(' glass')
-	elif 'paper' in artefact:
-		material_list_to_return.append(' paper')
+		material_list_to_return.append(' option1 ')
 	elif 'metal' in artefact:
-		material_list_to_return.append(' metal')
+		material_list_to_return.append(' option2 ')
+	elif 'paper' in artefact:
+		material_list_to_return.append(' option3 ')
 	else:
-		return ' othermat '
-	material_list_to_return = ' '.join(material_list_to_return)
+		return 'option4'
+	material_list_to_return = ''.join(material_list_to_return)
 	return material_list_to_return
 
 @register.simple_tag
 def get_country(country):
 	if 'United States of America' in country:
-		return ' USA '
+		return 'color-2'
 	elif 'Canada' in country:
-		return ' Canada '
+		return 'color-1'
 	else:
-		return ' othercountry '
+		return 'othercountry'
 
 
 @register.simple_tag
 def get_categories(category1):
 	if 'Receiving' in category1:
-		return ' Receiving '
+		return 'check1'
 	elif 'Aircraft parts' in category1:
-		return ' aircraft '
-	elif 'Models' in category1:
-		return ' models '
+		return 'check2'
 	else:
-		return ' othercategory '
+		return 'check3'
 
 @register.simple_tag
 def get_groups(artefact_group):
 	if 'Aviation' in artefact_group:
-		return ' Aviation '
+		return 'radio2'
 	elif 'Vacuum Tubes' in artefact_group:
-		return ' Vacuum '
+		return 'radio3'
 	elif 'Railway Transportation'in artefact_group:
-		return ' Railway '
+		return 'radio4'
 	else:
-		return ' othergroup '
+		return 'radio1'
+
+#################################
+@register.simple_tag
+def display_materials(artefact):
+	material_list_to_return = []
+	if 'glass' in artefact:
+		material_list_to_return.append(' glass ')
+	elif 'metal' in artefact:
+		material_list_to_return.append(' metal ')
+	elif 'paper' in artefact:
+		material_list_to_return.append(' paper ')
+	else:
+		return 'othermat'
+	material_list_to_return = ''.join(material_list_to_return)
+	return material_list_to_return
+
+@register.simple_tag
+def display_country(country):
+	if 'United States of America' in country:
+		return 'USA'
+	elif 'Canada' in country:
+		return 'Canada'
+	else:
+		return 'othercountry'
+
+
+@register.simple_tag
+def display_categories(category1):
+	if 'Receiving' in category1:
+		return 'Receiving'
+	elif 'Aircraft parts' in category1:
+		return 'Aircraft'
+	else:
+		return 'othercategories'
+
+@register.simple_tag
+def display_groups(artefact_group):
+	if 'Aviation' in artefact_group:
+		return 'aviation'
+	elif 'Vacuum Tubes' in artefact_group:
+		return 'vacuum'
+	elif 'Railway Transportation'in artefact_group:
+		return 'railway'
+	else:
+		return 'other_group'

@@ -18,9 +18,9 @@
 					<li class="placeholder"> 
 						<a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
 					</li> 
-					<li class="filter"><a class="selected" href="#0" data-type="all">All</a></li>
-					<li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Color 1</a></li>
-					<li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">Color 2</a></li>
+					<li class="filter"><a class="selected" href="#0" data-type="all">All Manufacturers Countries</a></li>
+					<li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Canada</a></li>
+					<li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">USA</a></li>
 				</ul> <!-- cd-filters -->
 			</div> <!-- cd-tab-filter -->
 		</div> <!-- cd-tab-filter-wrapper -->
@@ -49,7 +49,8 @@
 
 			<ul>
 			{% for artefact in object_list %}
-				<li class="mix {% get_options %}">
+				<li class="mix {% get_groups artefact.group1  %} 	{% get_categories artefact.category1  %} {% get_country artefact.ManuCountry  %} {% get_materials artefact.material  %}">
+					<span class="mix {% display_groups artefact.group1  %} 	{% display_categories artefact.category1  %} {% display_country artefact.ManuCountry  %} {% display_materials artefact.material  %}" ></span>
 					<a href="{% url 'portail:artefact_detail' artefact.id %}">
 						<img src="{{artefact.image}}" alt="{{ artefact.id}}">
 					</a>
@@ -98,34 +99,16 @@
 
 		<div class="cd-filter">
 			<form>
+			<!--
 				<div class="cd-filter-block">
 					<h4>Search</h4>
 					
 					<div class="cd-filter-content">
 						<input type="search" placeholder="Try color-1...">
-					</div> <!-- cd-filter-content -->
-				</div> <!-- cd-filter-block -->
+					</div> 
+				</div> 
+				-->
 
-				<div class="cd-filter-block">
-					<h4>Check boxes</h4>
-
-					<ul class="cd-filter-content cd-filters list">
-						<li>
-							<input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-			    			<label class="checkbox-label" for="checkbox1">Option 1</label>
-						</li>
-
-						<li>
-							<input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-							<label class="checkbox-label" for="checkbox2">Option 2</label>
-						</li>
-
-						<li>
-							<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-							<label class="checkbox-label" for="checkbox3">Option 3</label>
-						</li>
-					</ul> <!-- cd-filter-content -->
-				</div> <!-- cd-filter-block -->
 
 				<div class="cd-filter-block">
 					<h4>Materials</h4>
@@ -154,20 +137,43 @@
 
 						<li>
 							<input class="filter" data-filter=".radio2" type="radio" name="radioButton" id="radio2">
-							<label class="radio-label" for="radio2">Archives</label>
+							<label class="radio-label" for="radio2">Aviation</label>
 						</li>
 
 						<li>
 							<input class="filter" data-filter=".radio3" type="radio" name="radioButton" id="radio3">
-							<label class="radio-label" for="radio3">Clothing</label>
+							<label class="radio-label" for="radio3">Vacuum Tubes</label>
 						</li>
 						<li>
 							<input class="filter" data-filter=".radio4" type="radio" name="radioButton" id="radio4">
-							<label class="radio-label" for="radio4">Receiving</label>
+							<label class="radio-label" for="radio4">Railway Transportation</label>
 						</li>
 					</ul> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
 			</form>
+
+
+
+				<div class="cd-filter-block">
+					<h4>Category</h4>
+
+					<ul class="cd-filter-content cd-filters list">
+						<li>
+							<input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
+			    			<label class="checkbox-label" for="checkbox1">Receiving</label>
+						</li>
+
+						<li>
+							<input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
+							<label class="checkbox-label" for="checkbox2">Aircraft parts</label>
+						</li>
+
+						<li>
+							<input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
+							<label class="checkbox-label" for="checkbox3">Others</label>
+						</li>
+					</ul> <!-- cd-filter-content -->
+				</div> <!-- cd-filter-block -->
 
 			<a href="#0" class="cd-close">Close</a>
 		</div> <!-- cd-filter -->
