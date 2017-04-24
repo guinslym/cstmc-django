@@ -119,11 +119,8 @@ for artefact in artefacts:
         artefact.delete()
     else:
         material = materials(artefact.material)
-        if material == None:
-            pass#artefact.delete()
-        else:
-            artefact.material = material
-            #artefact.save()
+        artefact.material = material
+        artefact.save()
         print(material)
 
 
