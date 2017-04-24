@@ -48,14 +48,15 @@
 
 
 			<ul>
-			{% for artefact in object_list %}
-				<li class="mix {% get_groups artefact.group1  %} 	{% get_categories artefact.category1  %} {% get_country artefact.ManuCountry  %} {% get_materials artefact.material  %}">
-					<span class="mix {% display_groups artefact.group1  %} 	{% display_categories artefact.category1  %} {% display_country artefact.ManuCountry  %} {% display_materials artefact.material  %}" ></span>
-					<a href="{% url 'portail:artefact_detail' artefact.id %}">
-						<img src="{{artefact.image}}" alt="{{ artefact.id}}">
-					</a>
-				</li>
-			{% endfor %}
+			{% if object_list %}
+				{% for artefact in object_list %}
+					<li class="mix {% get_groups artefact.group1  %} 	{% get_categories artefact.category1  %} {% get_country artefact.ManuCountry  %} {% get_materials artefact.material  %}">
+						<span class="mix {% display_groups artefact.group1  %} 	{% display_categories artefact.category1  %} {% display_country artefact.ManuCountry  %} {% display_materials artefact.material  %}" ></span>
+						<a href="{% url 'portail:artefact_detail' artefact.id %}">
+							<img src="{{artefact.image}}" alt="{{ artefact.id}}">
+						</a>
+					</li>
+				{% endfor %}
 				<!-- 
 				<li class="mix color-2 check2 radio2 option2"><img src="{% static 'img/img-2.jpg' %}" alt="Image 2"></li>
 				<li class="mix color-1 check3 radio3 option1"><img src="{% static 'img/img-3.jpg' %}" alt="Image 3"></li>
@@ -75,7 +76,9 @@
 				<li class="gap"></li>
 				<li class="gap"></li>
 			</ul>
+			{% else %}
 			<div class="cd-fail-message">No results found</div>
+			{% endif %}
 
 
 <div class="row">

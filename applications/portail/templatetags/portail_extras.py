@@ -42,8 +42,14 @@ def get_objname():
 	for obj in art_name:
 		value = ["^400","^300","^200","^100"]
 		art_name_with_milliseconds.append(value[random.randint(0,3	)] + str(obj))
-	shuffle(art_name_with_milliseconds)
+	art_name = random.sample(art_name, 20)
 	return '","'.join(art_name[:20])
+
+
+###########################################
+
+
+
 
 @register.simple_tag
 def get_materials(artefact):
