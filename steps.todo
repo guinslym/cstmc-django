@@ -4,11 +4,11 @@ todo:
  ✔ Change color of Jumbotron @done (17-04-24 19:23)
  ☐ Pagination to fix
  ☐ Advanced Modal (all the list of objectname and their  # of occurences (in a static html template))
- ☐ About modal (more than 120,000 artefacts)
  ☐ Model to separate when I finish the application.
  ☐ Publish this application online
  ☐ Maybe add an advanced search just to make sure
- ☐ Change the title (meta->title)
+ ☐ About modal (more than 120,000 artefacts) (postpone)
+ ✔ Change the title (meta->title) @done (17-04-24 19:53)
 
 Miscelleanous:
  ☐ Search the Museum and Art Collection Database 
