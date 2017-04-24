@@ -61,9 +61,11 @@ for i in art_material:
         for a in i:
             if ';' in a:
                 a = a.split(';')
+                aa.append(a)
                 print('a {0}'.format(a))
     elif ';' in i:
         i = i.split(';')
+        aa.append(i)
     print(i)
 
 #Top 4 Country and Others
@@ -77,3 +79,63 @@ art_group = [i.group1 for i in artefacts]
 
 #category1
 art_category1 = [i.category1 for i in artefacts]
+
+def materials(material):
+    #print('original: {0}'.format(material))
+    if len(material) == 0 :
+        return None
+    if '->' not in material or ';' not in material:
+        #print('final --->{0}'.format(material))
+        return material
+    if '->' in material:
+        material =  material.split('->')
+        for a in  material:
+            if ';' in a:
+                a = a.split(';')
+                aa.append(a)
+    elif ';' in  material:
+        material =  material.split(';')
+        aa.append(material)
+    #print(material)
+    other_mat = []
+    if len(material) == 1:
+        return material
+    for mat in material:
+        if ';' in mat:
+            mat = mat.replace(';', ' ')
+            #print(mat)
+            other_mat.append(mat.strip())
+        else:
+            other_mat.append(mat)
+    #print(other_mat)
+    material = ';'.join(other_mat)
+    material = material.strip()
+    #print(material)
+    return material
+
+artefacts = Artefact.objects.all()
+for artefact in artefacts:
+    if artefact.ObjectName == '':
+        artefact.delete()
+    else:
+        material = materials(artefact.material)
+        if material == None:
+            pass#artefact.delete()
+        else:
+            artefact.material = material
+            #artefact.save()
+        print(material)
+
+
+art_material = [i.material for i in artefacts]
+
+'''
+In [99]: materials('paper->;fibre->cotton')
+a ['', 'fibre']
+['paper', ';fibre', 'cotton']
+
+In [100]: materials('glass;metal;paper;ceramic;synthetic')
+['glass', 'metal', 'paper', 'ceramic', 'synthetic']
+
+In [101]:
+'''

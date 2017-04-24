@@ -6,6 +6,7 @@ from random import shuffle
 register = template.Library()
 import random
 from applications.portail.models import Artefact
+from collections import Counter
 
 #simple_tag
 #inclusion_tag
@@ -47,15 +48,39 @@ def get_objname():
 @register.simple_tag
 def get_materials(artefacts):
 	art_name = [i.material for i in artefacts]
+	len_artname = Counter(art_name)
+	artefact_list = []
+	if len(len_artname) >= 3:
+		len_artname = dict(len_artname)
+		keys = list(len_artname.keys())
+		keys.sort(key=int)
+		for i in keys[0:3]:
+			artefact_list.append(len_artname.get(i))
+	return artefact_list
+
+artefacts = Artefact.objects.all()
+get_materials(artefacts)
 
 @register.simple_tag
 def get_countries(artefacts):
 	art_name = [i.ManuCountry for i in artefacts]
+	len_artname = Counter(art_name)
+	if len(len_artname) >= 3:
+		pass
+	return None
 
 @register.simple_tag
 def get_categories(artefacts):
 	art_name = [i.category1 for i in artefacts]
+	len_artname = Counter(art_name)
+	if len(len_artname) >= 3:
+		pass
+	return None
 
 @register.simple_tag
 def get_groups(artefacts):
 	art_name = [i.group1 for i in artefacts]
+	len_artname = Counter(art_name)
+	if len(len_artname) >= 3:
+		pass
+	return None
