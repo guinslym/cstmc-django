@@ -1,35 +1,21 @@
 todo:
- ✔ Homepage @done (17-04-18 19:39)
- ✔ Creating SearchFormPage (simple) @done (17-04-20 21:44)
- ☐ Manage Materials (db) (templatetags)
- ☐ Manage Category (db) (templatetags) (Breaks)
- ☐ ListView (Add pagination - bootstrap) (Add in a section and use other fonts)
  ☐ No result found
- ☐ 
- ☐ Creating AdvancedSearchFormPage (Q) (Same page as Simple but different Form) (break)
- ☐ 
- ☐ Detail page (do the table and layout)
- ☐ 
- ✔ Redo the db (maybe 2 or 3 table at most) @done (17-04-20 21:46)
- ✔ Translation (no more  - About page) @done (17-04-20 21:45)
- ☐ Manage Color (To remove for now)
- ☐ Add javascript (magnifier.. maybe)
- ☐ Remove unknow (no name)
- ☐ tests
- ☐ Fill the db
- ☐ Deploy
- ☐ 3 hrs max (got other things todo $$$$$$$$$ think Big)
- ☐ https://github.com/guinslym/cstmc_code2015
- ✔ Download detail page in PDF @done (17-04-20 21:45)
- ☐ Download image
+ ☐ Debug Mixitup (Canada only)
+ ☐ Change color of Jumbotron
+ ☐ Pagination to fix
+ ☐ Advanced Modal (all the list of objectname and their  # of occurences (in a static html template))
+ ☐ About modal (more than 120,000 artefacts)
+ ☐ Model to separate when I finish the application.
+ ☐ Publish this application online
+ ☐ Change the title (meta->title)
 
 Miscelleanous:
  ☐ Search the Museum and Art Collection Database 
- ☐ cstmc-collection.ca 15$
- ☐ cstmc.info 15$
- ☐ Python: Detect if it's a color image or B&W image
-   ☐ http://stackoverflow.com/questions/20068945/detect-if-image-is-color-grayscale-or-black-and-white-with-python-pil
-   ☐ http://stackoverflow.com/questions/14041562/python-pil-detect-if-an-image-is-completely-black-or-white
+ ✔ cstmc-collection.ca 15$ @done (17-04-24 00:06)
+ ✔ cstmc.info 15$ @done (17-04-24 00:06)
+ ✔ Python: Detect if it's a color image or B&W image @done (17-04-24 00:06)
+   ✔ http://stackoverflow.com/questions/20068945/detect-if-image-is-color-grayscale-or-black-and-white-with-python-pil @done (17-04-24 00:06)
+   ✔ http://stackoverflow.com/questions/14041562/python-pil-detect-if-an-image-is-completely-black-or-white @done (17-04-24 00:06)
 
 Journal:
  ☐ How can I upgrade my productivity in Web development?
@@ -73,6 +59,29 @@ If I had to redo this app, how can I improve my productivity?:
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ tests @done (17-04-24 00:03) @project(todo)
+ ✔ https://github.com/guinslym/cstmc_code2015 @done (17-04-24 00:03) @project(todo)
+ ✔ Translation (no more  - About page) @done (17-04-24 00:03) @project(todo)
+ ✔ Remove unknow (no name) @done (17-04-24 00:03) @project(todo)
+ ✔ Redo the db (maybe 2 or 3 table at most) @done (17-04-24 00:03) @project(todo)
+ ✔ No result found @done (17-04-24 00:03) @project(todo)
+ ✔ Manage Materials (db) (templatetags) @done (17-04-24 00:03) @project(todo)
+ ✔ Manage Color (To remove for now) @done (17-04-24 00:03) @project(todo)
+ ✔ Manage Category (db) (templatetags) (Breaks) @done (17-04-24 00:03) @project(todo)
+ ✔ ListView (Add pagination - bootstrap) (Add in a section and use other fonts) @done (17-04-24 00:03) @project(todo)
+ ✔ Fill the db @done (17-04-24 00:03) @project(todo)
+ ✔ Download image @done (17-04-24 00:03) @project(todo)
+ ✔ Download detail page in PDF @done (17-04-24 00:03) @project(todo)
+ ✔ Detail page (do the table and layout) @done (17-04-24 00:03) @project(todo)
+ ✔ Deploy @done (17-04-24 00:03) @project(todo)
+ ✔ Creating SearchFormPage (simple) @done (17-04-24 00:03) @project(todo)
+ ✔ Creating AdvancedSearchFormPage (Q) (Same page as Simple but different Form) (break) @done (17-04-24 00:03) @project(todo)
+ ✔ Add javascript (magnifier.. maybe) @done (17-04-24 00:03) @project(todo)
+ ✔ @done (17-04-24 00:03) @project(todo)
+ ✔ @done (17-04-24 00:03) @project(todo)
+ ✔ @done (17-04-24 00:03) @project(todo)
+ ✔ 3 hrs max (got other things todo $$$$$$$$$ think Big) @done (17-04-24 00:03) @project(todo)
+ ✔ Homepage @done (17-04-18 19:39) @project(todo)
  ✔ Page to DetailPage (should be blank) @done (17-04-14 20:18) @project(todo)
  ✔ ListView (add Link) @done (17-04-14 20:11) @project(todo)
  ✔ Filter and registration @done (17-04-14 20:11) @project(todo)
