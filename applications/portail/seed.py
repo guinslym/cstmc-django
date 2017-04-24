@@ -45,11 +45,20 @@ artefacts = Artefact.objects.all()
 art_name = [i.ObjectName for i in artefacts]
 
 from collections import Counter
-results = Counter(art_name).most_common(11)
+results = Counter(art_name).most_common(20)
+most_common_objname = []
 for arts in results:
     arts = list(arts)
-    if arts[0] != '':
-        print(arts)
+    most_common_objname.append(arts[0])
+    print(arts)
+print(most_common_objname)
+
+def delete_empty_objname():
+    artefacts = Artefact.objects.all()
+    for obj in artefacts:
+        if obj.ObjectName == '':
+            obj.delete()
+            print('deleted')
 
 a = Artefact.objects.first()
 a._meta.get_all_field_names()
