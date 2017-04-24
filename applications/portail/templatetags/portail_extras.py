@@ -46,38 +46,47 @@ def get_objname():
 	return '","'.join(art_name)
 
 @register.simple_tag
-def get_materials(artefacts):
-	art_name = [i.material for i in artefacts]
-	len_artname = Counter(art_name)
-	artefact_list = []
-	if len(len_artname) >= 3:
-			
-		keys = list(len_artname.keys())
-		keys.sort(key=int)
-		for i in keys[0:3]:
-			artefact_list.append(len_artname.get(i))
-	return artefact_list
+def get_materials(artefact):
+	material_list_to_return = []
+	if 'glass' in artefact:
+		material_list_to_return.append(' glass')
+	elif 'paper' in artefact:
+		material_list_to_return.append(' paper')
+	elif 'metal' in artefact:
+		material_list_to_return.append(' metal')
+	else:
+		return ' othermat '
+	material_list_to_return = ' '.join(material_list_to_return)
+	return material_list_to_return
 
 @register.simple_tag
-def get_countries(artefacts):
-	art_name = [i.ManuCountry for i in artefacts]
-	len_artname = Counter(art_name)
-	if len(len_artname) >= 3:
-		pass
-	return None
+def get_country(country):
+	if 'United States of America' in country:
+		return ' USA '
+	elif 'Canada' in country:
+		return ' Canada '
+	else:
+		return ' othercountry '
+
 
 @register.simple_tag
-def get_categories(artefacts):
-	art_name = [i.category1 for i in artefacts]
-	len_artname = Counter(art_name)
-	if len(len_artname) >= 3:
-		pass
-	return None
+def get_categories(category1):
+	if 'Receiving' in category1:
+		return ' Receiving '
+	elif 'Aircraft parts' in category1:
+		return ' aircraft '
+	elif 'Models' in category1:
+		return ' models '
+	else:
+		return ' othercategory '
 
 @register.simple_tag
-def get_groups(artefacts):
-	art_name = [i.group1 for i in artefacts]
-	len_artname = Counter(art_name)
-	if len(len_artname) >= 3:
-		pass
-	return None
+def get_groups(artefact_group):
+	if 'Aviation' in artefact_group:
+		return ' Aviation '
+	elif 'Vacuum Tubes' in artefact_group:
+		return ' Vacuum '
+	elif 'Railway Transportation'in artefact_group:
+		return ' Railway '
+	else:
+		return ' othergroup '
