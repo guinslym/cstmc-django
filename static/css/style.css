@@ -23,11 +23,15 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #331d35;
   background-color: #e7e7e7;
+  margin-top: 0px;
 }
 
 a {
-  color: #41307c;
+  color: #fff;
   text-decoration: none;
+}
+a:hover{
+  color:#994eb7;
 }
 
 /* -------------------------------- 
@@ -291,6 +295,10 @@ xgallery
     width: 48%;
     margin-bottom: 2em;
   }
+  .pagination{
+     color:black;
+     font-size: 43px;
+  }
 }
 @media only screen and (min-width: 1170px) {
   .cd-gallery {
@@ -306,6 +314,10 @@ xgallery
   .cd-gallery.filter-is-visible {
     /* reduce width when filter is visible */
     width: 80%;
+  }
+  .pagination{
+     color:black;
+     font-size: 43px;
   }
 }
 

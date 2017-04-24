@@ -1,7 +1,7 @@
 todo:
  ☐ No result found
  ☐ Debug Mixitup (Canada only)
- ☐ Change color of Jumbotron
+ ✔ Change color of Jumbotron @done (17-04-24 19:23)
  ☐ Pagination to fix
  ☐ Advanced Modal (all the list of objectname and their  # of occurences (in a static html template))
  ☐ About modal (more than 120,000 artefacts)

@@ -2,13 +2,24 @@
 {% load static %}
 {% load portail_extras %}
 {% load bootstrap_pagination %}
-{% load i18n %}
-{% load humanize %}
 
 
 
 
 {% block content %}
+
+
+	<header class="cd-header" style="margin-top:0px !important;">
+
+		<h1>
+			<a href="/" class="filter">Home</a>
+		</h1>
+
+
+
+	</header>
+
+
 
 
 	<main class="cd-main-content">
@@ -27,24 +38,12 @@
 
 		<section class="cd-gallery">
 
-<div class="row">
-	<div class="text-left">
-		<br/>
-		<!--
-		                       _             __  _
-		    ____  ____ _____ _(_)___  ____ _/ /_(_)___  ____
-		   / __ \/ __ `/ __ `/ / __ \/ __ `/ __/ / __ \/ __ \
-		  / /_/ / /_/ / /_/ / / / / / /_/ / /_/ / /_/ / / / /
-		 / .___/\__,_/\__, /_/_/ /_/\__,_/\__/_/\____/_/ /_/
-		/_/          /____/
-		-->
+<style type="text/css">
+	 li.disabled span{
+		color:black;
+	}
+</style>
 
-
-		{% bootstrap_paginate page_obj range=3 show_prev_next="true" show_first_last="true" previous_label="<" next_label=">" %}
-		 <!-- pagination -->
-	</div>
-
-</div>
 
 
 			<ul>
@@ -81,23 +80,7 @@
 			{% endif %}
 
 
-<div class="row">
-<div class="text-left">
-<br/>
-<!--
-                       _             __  _
-    ____  ____ _____ _(_)___  ____ _/ /_(_)___  ____
-   / __ \/ __ `/ __ `/ / __ \/ __ `/ __/ / __ \/ __ \
-  / /_/ / /_/ / /_/ / / / / / /_/ / /_/ / /_/ / / / /
- / .___/\__,_/\__, /_/_/ /_/\__,_/\__/_/\____/_/ /_/
-/_/          /____/
--->
-{% bootstrap_paginate page_obj range=3 show_prev_next="true" show_first_last="true" previous_label="<" next_label=">" %}
 
- <!-- end pagination -->
-</div>
-
-</div>
 		</section> <!-- cd-gallery -->
 
 		<div class="cd-filter">

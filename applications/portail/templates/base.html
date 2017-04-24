@@ -11,46 +11,17 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
 	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
-  	
-	<title>Content Filters | CodyHouse</title>
+  	<style type="text/css">
+  	a:hover, a:visited, a:link, a:active
+			{
+			    text-decoration: none;
+			}
+  	</style>
+	<title >Canada Science and Technology Museums Corporation | Code 2015 | Museum Image search Engine | Société des Musées de Sciences et Technologies du Canada </title>
 </head>
 <body>
-	<header class="cd-header">
-		<h1>
-			<a href="/">Content Filters</a>
-		</h1>
-
-
-
-
-	</header>
-
-<div class="center-block">
-	<div class="row">
-		<div class="col-lg-3 col-offset-3">
-			<div class="text-left">
-				<br/>
-				<!--
-				                       _             __  _
-				    ____  ____ _____ _(_)___  ____ _/ /_(_)___  ____
-				   / __ \/ __ `/ __ `/ / __ \/ __ `/ __/ / __ \/ __ \
-				  / /_/ / /_/ / /_/ / / / / / /_/ / /_/ / /_/ / / / /
-				 / .___/\__,_/\__, /_/_/ /_/\__,_/\__/_/\____/_/ /_/
-				/_/          /____/
-				-->
-
-
-				{% bootstrap_paginate page_obj range=3 show_prev_next="true" show_first_last="true" previous_label="<" next_label=">" %}
-				 <!-- pagination -->
-			</div>			
-		</div>
-
-	</div>
-</div>
 
 
   {% block content %}
