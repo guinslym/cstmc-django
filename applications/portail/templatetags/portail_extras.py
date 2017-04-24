@@ -43,3 +43,23 @@ def get_objname():
 		art_name_with_milliseconds.append(value[random.randint(0,3	)] + str(obj))
 	shuffle(art_name_with_milliseconds)
 	return '","'.join(art_name)
+
+@register.simple_tag
+def get_materials(artefacts):
+	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+
+@register.simple_tag
+def get_countries(artefacts):
+	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+
+@register.simple_tag
+def get_categories(artefacts):
+	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+
+@register.simple_tag
+def get_categories(artefacts):
+	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+
+@register.simple_tag
+def get_groups(artefacts):
+	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
