@@ -46,20 +46,16 @@ def get_objname():
 
 @register.simple_tag
 def get_materials(artefacts):
-	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+	art_name = [i.material for i in artefacts]
 
 @register.simple_tag
 def get_countries(artefacts):
-	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+	art_name = [i.ManuCountry for i in artefacts]
 
 @register.simple_tag
 def get_categories(artefacts):
-	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
-
-@register.simple_tag
-def get_categories(artefacts):
-	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+	art_name = [i.category1 for i in artefacts]
 
 @register.simple_tag
 def get_groups(artefacts):
-	art_name = [i.ObjectName for i in artefacts if len(i.ObjectName) > 1]
+	art_name = [i.group1 for i in artefacts]
