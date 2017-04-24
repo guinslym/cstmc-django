@@ -29,122 +29,156 @@
 		</div>
 
 			<table class="description table table-striped table-bordered table-hover">
+				{% if object.ObjectName %}
 				<tr>
 					<td><strong>ObjectName</strong></td>
 					<td>{{object.ObjectName}}</td>
 				</tr>
+				{% endif %}
+				{% if object.IDNO %}
 				<tr>
 					<td><strong>IDNO</strong></td>
 					<td>{{object.IDNO}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.GeneralDescription %}
 				<tr>
 					<td><strong>GeneralDescription</strong></td>
 					<td>{{object.GeneralDescription}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.model %}
 				<tr>
 					<td><strong>model</strong></td>
 					<td>{{object.model}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.SerialNumber %}
 				<tr>
 					<td><strong>SerialNumber</strong></td>
 					<td>{{object.SerialNumber}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.Manufacturer %}
 				<tr>
 					<td><strong>Manufacturer</strong></td>
 					<td>{{object.Manufacturer}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.ManuCountry %}
 				<tr>
 					<td><strong>ManuCountry</strong></td>
 					<td>{{object.ManuCountry}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.ManuProvince %}
 				<tr>
 					<td><strong>ManuProvince</strong></td>
 					<td>{{object.ManuProvince}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.ManuCity %}
 				<tr>
 					<td><strong>ManuCity</strong></td>
 					<td>{{object.ManuCity}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.BeginDate %}
 				<tr>
 					<td><strong>BeginDate</strong></td>
 					<td>{{object.BeginDate}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.EndDate %}
 				<tr>
 					<td><strong>EndDate</strong></td>
 					<td>{{object.EndDate}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.date_qualifier %}
 				<tr>
 					<td><strong>date_qualifier</strong></td>
 					<td>{{object.date_qualifier}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.patent %}
 				<tr>
 					<td><strong>patent</strong></td>
 					<td>{{object.patent}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.NumberOfComponents %}
 				<tr>
 					<td><strong>NumberOfComponents</strong></td>
 					<td>{{object.NumberOfComponents}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.ArtifactFinish %}
 				<tr>
 					<td><strong>ArtifactFinish</strong></td>
 					<td>{{object.ArtifactFinish}}</td>
 				</tr>
+                {% endif %}				
+				{% if object.ContextCanada %}
 				<tr>
 					<td><strong>ContextCanada</strong></td>
 					<td>{{object.ContextCanada}}</td>
 				</tr>
+                {% endif %}
+				{% if object.ArtifactFinish %}
 				<tr>
 					<td><strong>ArtifactFinish</strong></td>
 					<td>{{object.ArtifactFinish}}</td>
 				</tr>
+                {% endif %}
+				{% if object.ContextCanada %}
 				<tr>
 					<td><strong>ContextCanada</strong></td>
 					<td>{{object.ContextCanada}}</td>
 				</tr>
+                {% endif %}
+				{% if object.ContextFunction %}
 				<tr>
 					<td><strong>ContextFunction</strong></td>
 					<td>{{object.ContextFunction}}</td>
 				</tr>
+                {% endif %}
+				{% if object.ContextTechnical %}
 				<tr>
 					<td><strong>ContextTechnical</strong></td>
 					<td>{{object.ContextTechnical}}</td>
 				</tr>
-				<tr>
-					<td><strong>ContextFunction</strong></td>
-					<td>{{object.ContextFunction}}</td>
-				</tr>
+                {% endif %}
+				{% if object.group1 %}
 				<tr>
 					<td><strong>group1</strong></td>
 					<td>{{object.group1}}</td>
 				</tr>
+                {% endif %}
+				{% if object.category1 %}
 				<tr>
 					<td><strong>category1</strong></td>
 					<td>{{object.category1}}</td>
 				</tr>
+                {% endif %}
+				{% if object.Length %}
 				<tr>
 					<td><strong>Length</strong></td>
 					<td>{{object.Length}}</td>
 				</tr>
+                {% endif %}
+				{% if object.Width %}
 				<tr>
 					<td><strong>Width</strong></td>
 					<td>{{object.Width}}</td>
 				</tr>
+                {% endif %}
+				{% if object.Height %}
 				<tr>
 					<td><strong>Height</strong></td>
 					<td>{{object.Height}}</td>
 				</tr>
-				<tr>
-					<td><strong>Thickness</strong></td>
-					<td>{{object.Thickness}}</td>
-				</tr>
-				<tr>
-					<td><strong>Weight</strong></td>
-					<td>{{object.Weight}}</td>
-				</tr>
-				<tr>
-					<td><strong>Diameter</strong></td>
-					<td>{{object.Diameter}}</td>
-				</tr>
+				{% endif %}
 			</table>
 
 		</div>		
