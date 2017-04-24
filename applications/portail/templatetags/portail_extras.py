@@ -51,15 +51,12 @@ def get_materials(artefacts):
 	len_artname = Counter(art_name)
 	artefact_list = []
 	if len(len_artname) >= 3:
-		len_artname = dict(len_artname)
+			
 		keys = list(len_artname.keys())
 		keys.sort(key=int)
 		for i in keys[0:3]:
 			artefact_list.append(len_artname.get(i))
 	return artefact_list
-
-artefacts = Artefact.objects.all()
-get_materials(artefacts)
 
 @register.simple_tag
 def get_countries(artefacts):
