@@ -151,3 +151,63 @@ In [100]: materials('glass;metal;paper;ceramic;synthetic')
 
 In [101]:
 '''
+
+
+from applications.portail.models import Artefact
+import json
+
+with open("utils/artefacts.json") as data_file:
+    datas = json.load(data_file)
+
+artefacts = Artefact.objects.all()
+for i in artefacts:
+    if i.ObjectName == '':
+        i.delete()
+
+taille = len(datas)
+compteur = 0
+for key in datas.keys():
+    print('{0}/{1}'.format(compteur, taille))
+    compteur += 1
+    Artefact.objects.create(
+IDNO                = datas.get(key).get('IDNO'),
+ObjectName          = datas.get(key).get('ObjectName'),
+ManuCountry         = datas.get(key).get('ManuCountry'),
+group1              = datas.get(key).get('group1'),
+category1           = datas.get(key).get('category1'),
+material            = datas.get(key).get('material'),
+image               = datas.get(key).get('image'),
+#language            = datas.get(key).get('language'),
+#
+GeneralDescription  = datas.get(key).get('GeneralDescription'),
+model               = datas.get(key).get('model'),
+SerialNumber        = datas.get(key).get('SerialNumber'),
+Manufacturer        = datas.get(key).get('Manufacturer'),
+ManuProvince        = datas.get(key).get('ManuProvince'),
+ManuCity            = datas.get(key).get('ManuCity'),
+BeginDate           = datas.get(key).get('BeginDate'),
+EndDate             = datas.get(key).get('EndDate'),
+date_qualifier      = datas.get(key).get('date_qualifier'),
+patent              = datas.get(key).get('patent'),
+NumberOfComponents  = datas.get(key).get('NumberOfComponents'),
+ArtifactFinish      = datas.get(key).get('ArtifactFinish'),
+ContextCanada       = datas.get(key).get('ContextCanada'),
+ContextFunction     = datas.get(key).get('ContextFunction'),
+ContextTechnical    = datas.get(key).get('ContextTechnical'),
+subcategory1        = datas.get(key).get('subcategory1'),
+group2              = datas.get(key).get('group2'),
+category2           = datas.get(key).get('category2'),
+subcategory2        = datas.get(key).get('subcategory2'),
+group3              = datas.get(key).get('group3'),
+category3           = datas.get(key).get('category3'),
+subcategory3        = datas.get(key).get('subcategory3'),
+Length              = datas.get(key).get('Length'),
+Width               = datas.get(key).get('Width'),
+Height              = datas.get(key).get('Height'),
+Thickness           = datas.get(key).get('Thickness'),
+Weight              = datas.get(key).get('Weight'),
+Diameter            = datas.get(key).get('Diameter'),
+thumbnail           = datas.get(key).get('thumbnail'),
+
+
+        )
