@@ -36,5 +36,4 @@ hello*.json
 cstmc-CSV-en.csv
 utils/cstmc-CSV-en.csv
 utils/artefacts.json
-db.sqlite3
 artefacts.json
