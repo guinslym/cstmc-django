@@ -75,7 +75,7 @@ class Description(TimeStampedModel, models.Model):
     def __str__(self):
         return self.id
 
-    #FOREIGNKEY 
+    artefact            = models.ForeignKey(Artefact)
     GeneralDescription  = models.CharField(max_length=40, blank=True, null=True)
     model               = models.CharField(max_length=40, blank=True, null=True)
     SerialNumber        = models.CharField(max_length=40, blank=True, null=True)
