@@ -69,7 +69,7 @@ class Artefact(TimeStampedModel, models.Model):
         verbose_name = 'Artefact'
         verbose_name_plural = 'Artefacts'
 
-"""
+
 @python_2_unicode_compatible
 class Description(TimeStampedModel, models.Model):
     def __str__(self):
@@ -105,13 +105,13 @@ class Description(TimeStampedModel, models.Model):
     Weight              = models.CharField(max_length=40, blank=True, null=True)
     Diameter            = models.CharField(max_length=40, blank=True, null=True)
     thumbnail           = models.URLField(max_length=250, blank=True, null=True)
-
+    '''
     def get_absolute_url(self):
         return reverse('portail:description_detail', args=(self.id,))
+    '''
     
     class Meta:
         #ordering = ["-created"]
         #ordering = ("?",)
         verbose_name = 'Description'
         verbose_name_plural = 'Descriptions'
-"""
