@@ -86,7 +86,7 @@ def get_country(country):
 	elif 'Canada' in country:
 		return 'color-1'
 	else:
-		return 'othercountry'
+		return 'color-2'
 
 
 @register.simple_tag

@@ -8,12 +8,32 @@
 
 {% block content %}
 
-
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<header class="cd-header" style="margin-top:0px !important;">
+<div class="center-block">
+	<div class="row">
+		<div class="col-lg-3 col-offset-3">
+			<div class="text-center">
+				<br/>
+				<!--
+				                       _             __  _
+				    ____  ____ _____ _(_)___  ____ _/ /_(_)___  ____
+				   / __ \/ __ `/ __ `/ / __ \/ __ `/ __/ / __ \/ __ \
+				  / /_/ / /_/ / /_/ / / / / / /_/ / /_/ / /_/ / / / /
+				 / .___/\__,_/\__, /_/_/ /_/\__,_/\__/_/\____/_/ /_/
+				/_/          /____/
+				-->
 
-		<h1>
-			<a href="/" class="filter">Home</a>
-		</h1>
+
+				{% bootstrap_paginate page_obj range=3 show_prev_next="true" show_first_last="true" previous_label="<" next_label=">" %}
+				 <!-- pagination -->
+			</div>			
+		</div>
+
+	</div>
+</div>
+
 
 
 
@@ -25,14 +45,15 @@
 	<main class="cd-main-content">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">
-				<ul class="cd-filters">
+
+							<ul class="cd-filters">
 					<li class="placeholder"> 
 						<a data-type="all" href="#0">All</a> <!-- selected option on mobile -->
 					</li> 
-					<li class="filter"><a class="selected" href="#0" data-type="all">All Manufacturers Countries</a></li>
-					<li class="filter" data-filter=".color-1"><a href="#0" data-type="color-1">Canada</a></li>
-					<li class="filter" data-filter=".color-2"><a href="#0" data-type="color-2">USA</a></li>
+					<li class="filter"><a href="/" class="filter">Back to Homepage</a></li>
 				</ul> <!-- cd-filters -->
+
+
 			</div> <!-- cd-tab-filter -->
 		</div> <!-- cd-tab-filter-wrapper -->
 
@@ -51,6 +72,8 @@
 				{% for artefact in object_list %}
 					<li class="mix {% get_groups artefact.group1  %} 	{% get_categories artefact.category1  %} {% get_country artefact.ManuCountry  %} {% get_materials artefact.material  %}">
 						<span class="mix {% display_groups artefact.group1  %} 	{% display_categories artefact.category1  %} {% display_country artefact.ManuCountry  %} {% display_materials artefact.material  %}" ></span>
+						<span style="display:none">Material: {{ artefact.material }}</span>
+						<span style="display:none">Result: {% get_materials artefact.material  %} </span>
 						<a href="{% url 'portail:artefact_detail' artefact.id %}">
 							<img src="{{artefact.image}}" alt="{{ artefact.id}}">
 						</a>
@@ -95,7 +118,7 @@
 				</div> 
 				-->
 
-
+<!--
 				<div class="cd-filter-block">
 					<h4>Materials</h4>
 					
@@ -106,11 +129,10 @@
 								<option value=".option1">Glass</option>
 								<option value=".option2">Metal</option>
 								<option value=".option3">Paper</option>
-								<option value=".option4">Other</option>
 							</select>
-						</div> <!-- cd-select -->
-					</div> <!-- cd-filter-content -->
-				</div> <!-- cd-filter-block -->
+						</div> 
+					</div> 
+				</div>  -->
 
 				<div class="cd-filter-block">
 					<h4>Group</h4>
@@ -136,7 +158,7 @@
 						</li>
 					</ul> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
-			</form>
+
 
 
 
@@ -160,6 +182,12 @@
 						</li>
 					</ul> <!-- cd-filter-content -->
 				</div> <!-- cd-filter-block -->
+
+
+			</form>
+
+
+
 
 			<a href="#0" class="cd-close">Close</a>
 		</div> <!-- cd-filter -->

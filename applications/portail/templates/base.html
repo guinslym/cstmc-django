@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}"> <!-- CSS reset -->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}"> <!-- Resource style -->
 	<script src="{% static 'js/modernizr.js' %}"></script> <!-- Modernizr -->
+<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
+<script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
   	<style type="text/css">
   	a:hover, a:visited, a:link, a:active
 			{
@@ -27,8 +29,24 @@
   {% block content %}
   {% endblock %}
   
-<script src="{% static 'js/jquery-2.1.1.js' %}"></script>
 <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script> <!-- Resource jQuery -->
+<script type="text/javascript">
+	$('body').imagesLoaded()
+  .always( function( instance ) {
+    console.log('all images loaded');
+  })
+  .done( function( instance ) {
+    console.log('all images successfully loaded');
+  })
+  .fail( function() {
+    console.log('all images loaded, at least one is broken');
+  })
+  .progress( function( instance, image ) {
+    var result = image.isLoaded ? 'loaded' : 'broken';
+    console.log( 'image is ' + result + ' for ' + image.img.src );
+  });
+
+</script>
 </body>
 </html>
