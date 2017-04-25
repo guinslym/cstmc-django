@@ -142,5 +142,5 @@ def download_image(url):
 #time_in_total = str(datetime.timedelta(seconds=seconds))
 #print("Time took to download\nall the dataset => {0}".format(time_in_total))
 
-write_a_json_file_for_the_database(d, 'hello-fr.json')
+write_a_json_file_for_the_database(d, 'artefacts.json')
 #total images 128,366
