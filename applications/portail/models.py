@@ -22,7 +22,7 @@ class Artefact(TimeStampedModel, models.Model):
         return self.ObjectName
 
     IDNO                = models.CharField(max_length=40, blank=True, null=True)
-    ObjectName          = models.CharField(max_length=40, blank=True, null=True, default="No Name")
+    ObjectName          = models.CharField(max_length=40, blank=True, null=True)
     ManuCountry         = models.CharField(max_length=40, blank=True, null=True)
     group1              = models.CharField(max_length=40, blank=True, null=True)
     category1           = models.CharField(max_length=40, blank=True, null=True)
