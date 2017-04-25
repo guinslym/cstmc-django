@@ -165,11 +165,12 @@ for i in artefacts:
         i.delete()
 
 taille = len(datas)
-compteur = 0
+compteur = 1
 for key in datas.keys():
     print('{0}/{1}'.format(compteur, taille))
     compteur += 1
-    Artefact.objects.create(
+    if datas.get(key).get('ObjectName') != '':
+        Artefact.objects.create(
 IDNO                = datas.get(key).get('IDNO'),
 ObjectName          = datas.get(key).get('ObjectName'),
 ManuCountry         = datas.get(key).get('ManuCountry'),

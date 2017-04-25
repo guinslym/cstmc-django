@@ -23,3 +23,10 @@ class TestArtefact:
     def test_null_field_with_content(self):
     	obj = mixer.blend('portail.Artefact', IDNO='hello')
     	assert isinstance(obj.IDNO, str)
+    
+    def test_relationship(self):
+    	obj = mixer.blend('portail.Description')
+    	assert obj.artefact.id == 1
+    	art = mixer.blend('portail.Artefact')
+    	obj = mixer.blend('portail.Description', artefact=art)
+    	assert obj.artefact.id == 2
