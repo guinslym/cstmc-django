@@ -53,7 +53,7 @@ start_time = time.time()
 from pprint import pprint
 
 d = {}
-with open("cstmc-CSV-fr.csv") as f:
+with open("cstmc-CSV-en.csv") as f:
     headers = [header.strip() for header in next(f).split("|")[1:]]
 
     for line in f:

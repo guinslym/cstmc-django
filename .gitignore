@@ -33,3 +33,5 @@ description.todo
 python3env
 hello*.json
 *journa*
+cstmc-CSV-en.csv
+utils/cstmc-CSV-en.csv

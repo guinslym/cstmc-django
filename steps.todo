@@ -1,9 +1,10 @@
 todo:
- ☐ No result found
- ☐ Debug Mixitup (Canada only)
+ ✔ No result found @done (17-04-24 20:51)
+ ✔ Debug Mixitup (Canada only) @done (17-04-24 20:48)
  ✔ Change color of Jumbotron @done (17-04-24 19:23)
- ☐ Pagination to fix
- ☐ Maybe add an advanced search just to msake sure (postpone..not important)
+ ✔ Pagination to fix @done (17-04-24 20:49)
+ ✔ Maybe add an advanced search just to msake sure (postpone..not important) @done (17-04-24 20:49)
+ ☐ Add realdata
  ☐ Model to separate when I finish the application.(postpone after pagination)
  ☐ About modal (more than 120,000 artefacts) (postpone with real data)
  ☐ Publish this application online
