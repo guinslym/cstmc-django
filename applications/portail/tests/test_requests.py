@@ -30,13 +30,16 @@ class TestHomeView:
         req = RequestFactory().get('/')
         resp = ArtefactListView.as_view()(req)
         assert resp.status_code == 200, 'Should be callable by anyone'
+
+    def test_search(self):
+        post = mixer.blend('portail.Artefact')
+        data = {'searchKey': 'tube'}
+        req = RequestFactory().get('/portail/search/', data=data)
+        req._dont_enforce_csrf_checks = True
+        pytest.set_trace()
     
     def test_post(self):
         post = mixer.blend('portail.Artefact')
         data = {'body': 'New Body Text!'}
         req = RequestFactory().post('/', data=data)
         req.user = AnonymousUser()
-        resp = ArtefactSearchView.as_view()(req, pk=post.pk)
-        assert resp.status_code == 302, 'Should redirect to success view'
-        post.refresh_from_db()
-        assert post.body == 'New Body Text!', 'Should update the post'
