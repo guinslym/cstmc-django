@@ -39,17 +39,20 @@ class RequestTests(TestCase):
         response = ArtefactSearchView.as_view()(request)
         self.assertEqual(response.status_code, 200)
     
-    @pytest.mark.xfail
     def test_detail_view(self):
         '''
         I need to find out how to make this View work within the Test list
         '''
-        obj = mixer.cycle(5).blend('portail.Artefact', ObjectName=mixer.sequence('objname{0}'))
-        artefact = Artefact.objects.first()
-        response = self.factory.get(reverse('artefact_detail', args=[artefact.id]))
-        #request = self.factory.get('/', {'pk':10})
-        #response = ArtefactDetailView.as_view()(request, pk=10)
+        #test url
+        obj = mixer.blend('portail.Artefact', ObjectName='My_beautilful_Artefact')
+        reverser = reverse('portail:artefact_detail', kwargs={'pk':obj.id})
+        assert reverser == '/portail/1/'
+        #test request
+        request = self.factory.get(reverse('portail:artefact_detail', kwargs={'pk':obj.id}))
+        response = ArtefactDetailView.as_view()(request, pk=1)
+        assert response.template_name[0] == 'portail/detail.html'
         self.assertEqual(response.status_code, 200)
+        assert 'My_beautilful_Artefact' in response.rendered_content
 
     @pytest.mark.skip(reason="function not implemented")
     def test_advanced_search_view(self):
