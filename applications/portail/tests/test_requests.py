@@ -18,6 +18,8 @@ ArtefactSearchView,
 from django.core.urlresolvers import reverse
 from django.test import  Client
 from django.core.urlresolvers import reverse_lazy
+from mixer.backend.django import mixer
+from applications.portail.models import Artefact
 
 
 class RequestTests(TestCase):
@@ -33,14 +35,21 @@ class RequestTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_search_view(self):
-        request = self.factory.post('/search')
+        request = self.factory.get('/search', {'searchKey':'hammer'})
         response = ArtefactSearchView.as_view()(request)
         self.assertEqual(response.status_code, 200)
-
+    
+    @pytest.mark.xfail
     def test_detail_view(self):
-        pass
+        '''
+        I need to find out how to make this View work within the Test list
+        '''
+        obj = mixer.cycle(5).blend('portail.Artefact', ObjectName=mixer.sequence('objname{0}'))
+        request = self.factory.get('/', {'pk':10})
+        response = ArtefactDetailView.as_view()(request, pk=10)
+        self.assertEqual(response.status_code, 200)
 
     @pytest.mark.skip(reason="function not implemented")
     def test_advanced_search_view(self):
-        pass
+        assert True
 
