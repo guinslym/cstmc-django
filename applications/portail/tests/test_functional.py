@@ -23,5 +23,5 @@ class FunctionalTest(StaticLiveServerTestCase):
         return self.live_server_url + reverse(namespace)
 
     def test_home_title(self):
-        self.selenium.get(self._get_full_url("artefact_home"))
-        self.assertIn(u'Science and Technoloy', self.selenium.title)
+        self.selenium.get(self._get_full_url("portail:artefact_home"))
+        self.assertIn(u'Science and Technology', self.selenium.title)
