@@ -12,14 +12,6 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 
-#Protected
-from braces.views import LoginRequiredMixin, SelectRelatedMixin
-from django.contrib.auth.decorators import login_required
-
-#messages
-from django.contrib import messages
-from django.contrib.messages.views import SuccessMessageMixin
-
 #models
 from applications.portail.models  import Artefact
 
@@ -73,16 +65,12 @@ class ArtefactListView(ListView):
     paginate_by = 10
     model = Artefact
     template_name = 'portail/home_view.html'
+    allowed_methods = ['GET']
 
     def get_context_data(self, **kwargs):
         context = super(ArtefactListView, self).get_context_data(**kwargs)
         context['now'] = datetime.now()
         return context
-
-    def language(self):
-        """Return the user default language"""
-        language = language_set(self.request.LANGUAGE_CODE)
-        return language
 
     def get_queryset(self):
         #return Artefact.objects.select_related('author')
@@ -99,11 +87,6 @@ class ArtefactDetailView(DetailView):
 class ArtefactHomeView(TemplateView):
     model = Artefact
     template_name = 'portail/homepage.html'
-
-    def language(self):
-        """Return the user default language"""
-        language = language_set(self.request.LANGUAGE_CODE)
-        return language
 
     def get_context_data(self, **kwargs):
         context = super(

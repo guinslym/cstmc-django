@@ -1,11 +1,15 @@
+import platform
 from selenium.webdriver.firefox import webdriver
 from selenium.webdriver.common.keys import Keys
 from django.core.urlresolvers import reverse
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from django.utils import formats
 from selenium import webdriver
+import pytest
 
-"""
+@pytest.mark.skip(
+    platform.system() == 'Windows', 
+    reason="couldn't run Selenium in my Windows machine :(")
 class FunctionalTest(StaticLiveServerTestCase):
     def setUp(self):
         self.selenium = webdriver.WebDriver()
@@ -20,5 +24,4 @@ class FunctionalTest(StaticLiveServerTestCase):
 
     def test_home_title(self):
         self.selenium.get(self._get_full_url("artefact_home"))
-        self.assertIn(u'Title that you expect', self.selenium.title)
-"""
+        self.assertIn(u'Science and Technoloy', self.selenium.title)
