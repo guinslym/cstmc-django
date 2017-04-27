@@ -65,3 +65,7 @@ class TestUnit(TestCase):
         #resolver = resolve('/home/')
         #assertEqual(resolver.view_name, 'summary')
         pass
+
+    def test_home_uls2(self):
+        resolver = resolve('/portail/')
+        assert resolver.namespaces == 'portail'
