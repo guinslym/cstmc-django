@@ -5,7 +5,6 @@ from django.conf.urls import include, url
 from applications.portail.views import (
 	#Other
     ArtefactHomeView,
-    ArtefactListView,
     ArtefactDetailView,
     robot_files,
     ArtefactAdvancedSearchView,

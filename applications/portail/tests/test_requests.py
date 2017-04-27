@@ -13,6 +13,7 @@ from applications.portail.views import (
 ArtefactHomeView,
 ArtefactSearchView,
 ArtefactDetailView,
+ArtefactSearchView,
     )
 from django.core.urlresolvers import reverse
 from django.test import  Client
@@ -26,14 +27,20 @@ class RequestTests(TestCase):
         self.factory = RequestFactory()
         # Add records to test DB
 
-    def test_home_view_without_client(self):
+    def test_home_view(self):
         request = self.factory.get('/')
         response = ArtefactHomeView.as_view()(request)
         self.assertEqual(response.status_code, 200)
 
     def test_search_view(self):
-        pass
-        
+        request = self.factory.post('/search')
+        response = ArtefactSearchView.as_view()(request)
+        self.assertEqual(response.status_code, 200)
+
     def test_detail_view(self):
+        pass
+
+    @pytest.mark.skip(reason="function not implemented")
+    def test_advanced_search_view(self):
         pass
 

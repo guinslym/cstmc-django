@@ -46,6 +46,7 @@ class ArtefactSearchView(ListView):
     paginate_by = 10
     template_name = 'portail/home_view.html'
     keywords = ''
+    allowed_methods = ['GET']
 
     def get(self, request, *args, **kwargs):
         self.keywords = request.GET.get('searchKey')
@@ -59,26 +60,6 @@ class ArtefactSearchView(ListView):
                     order_by('-id')
         #import ipdb;ipdb.set_trace()
         return artefacts
-
-class ArtefactListView(ListView):
-    #context_object_name='artefacts'
-    paginate_by = 10
-    model = Artefact
-    template_name = 'portail/home_view.html'
-    allowed_methods = ['GET']
-
-    def get_context_data(self, **kwargs):
-        context = super(ArtefactListView, self).get_context_data(**kwargs)
-        context['now'] = datetime.now()
-        return context
-
-    def get_queryset(self):
-        #return Artefact.objects.select_related('author')
-        return Artefact.objects.all()#filter(status__iexact=Artefact.STATUS.active)
-
-    def get_paginate_by(self, queryset):
-        """ Paginate by specified value in querystring, or use default class property value.  """
-        return self.request.GET.get('paginate_by', self.paginate_by)
 
 class ArtefactDetailView(DetailView):
     model = Artefact
