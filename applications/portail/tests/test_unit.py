@@ -17,6 +17,7 @@ from applications.portail.utils import (
 get_background_image,
 language_set,
 	)
+from django.core.urlresolvers import reverse, resolve
 
 class TestUnit(TestCase):
 
@@ -56,3 +57,11 @@ class TestUnit(TestCase):
         obj = mixer.cycle(60).blend('portail.Artefact', ObjectName=mixer.sequence('objname{0}'))
         result = get_most_common_objname()
         assert len(result) == 20
+    
+    @pytest.mark.xfail
+    def test_home_urls(self):
+        #url = reverse('portail:home')
+        #assertEqual(url, '/portail/home/')
+        #resolver = resolve('/home/')
+        #assertEqual(resolver.view_name, 'summary')
+        pass

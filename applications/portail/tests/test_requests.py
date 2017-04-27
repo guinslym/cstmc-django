@@ -45,8 +45,10 @@ class RequestTests(TestCase):
         I need to find out how to make this View work within the Test list
         '''
         obj = mixer.cycle(5).blend('portail.Artefact', ObjectName=mixer.sequence('objname{0}'))
-        request = self.factory.get('/', {'pk':10})
-        response = ArtefactDetailView.as_view()(request, pk=10)
+        artefact = Artefact.objects.first()
+        response = self.factory.get(reverse('artefact_detail', args=[artefact.id]))
+        #request = self.factory.get('/', {'pk':10})
+        #response = ArtefactDetailView.as_view()(request, pk=10)
         self.assertEqual(response.status_code, 200)
 
     @pytest.mark.skip(reason="function not implemented")
