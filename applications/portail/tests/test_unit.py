@@ -57,15 +57,15 @@ class TestUnit(TestCase):
         obj = mixer.cycle(60).blend('portail.Artefact', ObjectName=mixer.sequence('objname{0}'))
         result = get_most_common_objname()
         assert len(result) == 20
-    
-    @pytest.mark.xfail
-    def test_home_urls(self):
-        #url = reverse('portail:home')
-        #assertEqual(url, '/portail/home/')
-        #resolver = resolve('/home/')
-        #assertEqual(resolver.view_name, 'summary')
-        pass
-
-    def test_home_uls2(self):
+    #py.test -v applications/portail/tests/test_unit.py::TestUnit::test_urls
+    def test_urls(self):
         resolver = resolve('/portail/')
-        assert resolver.namespaces == 'portail'
+        assert resolver.namespaces == ['portail']
+        assert resolver.url_name == 'artefact_home'
+        reverser = reverse('portail:home')
+        assert reverser == '/portail/home/'
+        obj = mixer.blend('portail.Artefact')
+        reverser = reverse('portail:artefact_detail', kwargs={'pk':obj.id})
+        assert reverser == '/portail/1/'
+        reverser = reverse('portail:artefact_search')
+        assert reverser == '/portail/search/'
