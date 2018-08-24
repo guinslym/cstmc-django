@@ -22,6 +22,72 @@ from applications.portail.utils import get_background_image, language_set
 import logging
 logger = logging.getLogger(__name__)
 
+
+from datetime import datetime
+import random
+import time
+
+
+def create_random_datetime(from_date, to_date, rand_type='uniform'):
+    """
+    Create random date within timeframe.
+    Parameters
+    ----------
+    from_date : datetime object
+    to_date : datetime object
+    rand_type : {'uniform'}
+    Examples
+    --------
+    >>> random.seed(28041990)
+    >>> create_random_datetime(datetime(1990, 4, 28), datetime(2000, 12, 31))
+    datetime.datetime(1998, 12, 13, 23, 38, 0, 121628)
+    >>> create_random_datetime(datetime(1990, 4, 28), datetime(2000, 12, 31))
+    datetime.datetime(2000, 3, 19, 19, 24, 31, 193940)
+    """
+    delta = to_date - from_date
+    if rand_type == 'uniform':
+        rand = random.random()
+    else:
+        raise NotImplementedError('Unknown random mode \'{}\''
+                                  .format(rand_type))
+    return from_date + rand * delta
+
+
+d = [create_random_datetime(datetime(2018, 7, 1), datetime(2018, 8, 31)) for i in range(200)]
+
+
+
+e = [i.date() for i in d]
+
+data = [int(time.mktime(i.timetuple()) )for i in e]
+
+data = sorted(data)
+
+import collections
+counter=collections.Counter(data)
+counter = dict(counter)
+print(counter)
+
+datas = []
+for key, value in enumerate(counter):
+    datas.append({"date":value , "value":key})
+
+import json
+datas = json.dumps(counter)
+print(datas)
+# {date: 946702811, value: 15}
+
+class HeatmapView(TemplateView):
+
+    def get_context_data(self, **kwargs):
+        context = super(
+                    HeatmapView, self
+                ).get_context_data(**kwargs)
+        context['data'] = datas
+        return context
+    template_name = 'portail/heatmap.html'
+
+
 #http://localhost:8001/emplois/searchJobs/<searchKey>
 class ArtefactAdvancedSearchView(ListView):
     model = Artefact
@@ -39,7 +105,7 @@ class ArtefactAdvancedSearchView(ListView):
                     = self.keywords).\
                     order_by('-id')
         return artefacts
-        
+
 #http://localhost:8001/emplois/searchJobs/<searchKey>
 class ArtefactSearchView(ListView):
     model = Artefact
@@ -77,7 +143,7 @@ class ArtefactHomeView(TemplateView):
         return context
 
 
-    
+
 def robot_files(request, filename):
     return render(request, 'portail/'+filename, {}, content_type="text/plain")
 
