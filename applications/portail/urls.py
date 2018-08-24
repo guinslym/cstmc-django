@@ -8,6 +8,8 @@ from applications.portail.views import (
     ArtefactDetailView,
     robot_files,
     ArtefactSearchView,
+    HeatmapView,
+    HeatmapView,
 	)
 
 
@@ -16,5 +18,6 @@ urlpatterns = [
    url(r'^search/$', ArtefactSearchView.as_view(), name='artefact_search'),
    url(r'^(?P<pk>\d+)/$', ArtefactDetailView.as_view(), name='artefact_detail'),
    url(r'^(?P<filename>(robots.txt)|(humans.txt))$', robot_files, name='robot'),
+   url(r'^$', HeatmapView.as_view(), name='heatmap'),
    url(r'^$', ArtefactHomeView.as_view(), name='artefact_home'),
 ]
