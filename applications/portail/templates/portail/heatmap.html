@@ -1,0 +1,98 @@
+{% extends 'base_detail.html' %}
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
+
+<style media="screen">
+.subdomain-text {
+	font-size: 14px;
+	fill: #999;
+	pointer-events: none
+}
+
+</style>
+
+<style type="text/css">
+	tr.description td:first-child, {
+    font-weight: bolder !important;
+}
+</style>
+    <div class="jumbotron">
+      <div class="container">
+        <h1> </h1>
+        <small></small>
+      </div>
+    </div>
+
+<div class="container">
+	<div class="row">
+
+
+			<div id="cal-heatmap"></div>
+			<div id="cal-heatmap-placeholder"></div>
+			<script type="text/javascript">
+
+
+	var datas = {"1530417600": 50, "1530504000": 53, "1530590400": 43, "1530676800": 57, "1530763200": 53, "1530849600": 17, "1530936000": 49, "1531022400": 53, "1531108800": 49, "1531195200": 42, "1531281600": 50, "1531368000": 17, "1531454400": 38, "1531540800": 51, "1531627200": 57, "1531713600": 51, "1531800000": 53, "1531886400": 2, "1531972800": 51, "1532059200": 51, "1532145600": 61, "1532232000": 0, "1532318400": 43, "1532404800": 43, "1532491200": 58, "1532577600": 49, "1532664000": 48, "1532750400": 49, "1532836800": 56, "1532923200": 57, "1533009600": 44, "1533096000": 59, "1533182400": 17, "1533268800": 17, "1533355200": 17, "1533441600": 54, "1533528000": 17, "1533614400": 2, "1533700800": 41, "1533787200": 46, "1533873600": 50, "1533960000": 48, "1534046400": 50, "1534132800": 46, "1534219200": 53, "1534305600": 63, "1534392000": 48, "1534478400": 40, "1534564800": 46, "1534651200": 43, "1534737600": 37, "1534824000": 53, "1534910400": 40, "1534996800": 53, "1535083200": 26, "1535169600": 51, "1535256000": 49, "1535342400": 54, "1535428800": 68, "1535515200": 49, "1535601600": 36};
+
+
+
+				var cal = new CalHeatMap();
+				cal.init({
+						itemSelector: "#cal-heatmap",
+						start: new Date(2018, 5),
+						data: datas,
+						domain: "month",
+						subDomain: "day",
+						cellSize: 30,
+						// verticalOrientation: true,
+						cellPadding: 5,
+						subDomainTitleFormat: {
+						 filled: '{count} courses completed'
+					 },
+						subDomainTextFormat: "%d",
+						range: 4,
+						domainGutter: 20,
+						subDomainTextFormat: "%d",
+						// displayLegend: false
+						legend: [10, 20, 30, 40, 50],
+						itemName: "completed course",
+						legendColors: {
+	empty: "#ededed",
+	min: "#40ffd8",
+	max: "#f20013"
+},
+onClick: function(date, nb) {
+	$("#cal-heatmap-placeholder").html("You just clicked <br/>on <b>" +
+		date + "</b> <br/>with <b>" +
+		(nb === null ? "unknown" : nb) + "</b> completed course"
+	);
+},
+	domainLabelFormat: "%m-%Y"
+// legendColors: ["#ecf5e2", "#232181"]
+});
+			</script>
+
+
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}
