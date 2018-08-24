@@ -77,6 +77,24 @@ datas = json.dumps(counter)
 print(datas)
 # {date: 946702811, value: 15}
 
+'''
+import pandas as pd
+pd.read_excel('excel_file.xslx')
+# pd.read_excel('excel_file.xslx', skip_row=1)
+from datetime import datetime
+from dateutil import parser
+dt = parser.parse("Aug 28 1999 12:00AM")
+arrow.get(dt).timestamp
+# skip or delete row 1
+data['EnrolledDate_unixtimestamp'] = data.apply(
+    lambda row: arrow.get(row['Enrolled Date']).timestamp, axis=1
+    )
+data['EnrolledDate_unixtimestamp']
+
+#Create a Dict with the data
+#convert the dict to JSON
+'''
+
 class HeatmapView(TemplateView):
 
     def get_context_data(self, **kwargs):
