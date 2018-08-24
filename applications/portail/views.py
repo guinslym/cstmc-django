@@ -66,21 +66,22 @@ data = sorted(data)
 import collections
 counter=collections.Counter(data)
 counter = dict(counter)
-print(counter)
 
-datas = []
-for key, value in enumerate(counter):
-    datas.append({"date":value , "value":key})
-
-import json
-datas = json.dumps(counter)
-print(datas)
+# datas = []
+# for key, value in enumerate(counter):
+#     datas.append({"date":value , "value":key})
+#
+# import json
+# datas = json.dumps(counter)
+# print(datas)
 # {date: 946702811, value: 15}
 
-'''
 import pandas as pd
-pd.read_excel('excel_file.xslx')
-# pd.read_excel('excel_file.xslx', skip_row=1)
+import arrow
+data = pd.read_excel('excel_file.xlsx')
+# data = pd.read_excel('excel_file.xlsx', skiprows=[0:1])
+
+
 from datetime import datetime
 from dateutil import parser
 dt = parser.parse("Aug 28 1999 12:00AM")
@@ -91,9 +92,22 @@ data['EnrolledDate_unixtimestamp'] = data.apply(
     )
 data['EnrolledDate_unixtimestamp']
 
-#Create a Dict with the data
-#convert the dict to JSON
-'''
+datas = data['EnrolledDate_unixtimestamp'].value_counts().to_dict()
+
+#convert to proper dict
+
+import numpy
+def default(o):
+    if isinstance(o, numpy.int64): return int(o)
+    raise TypeError
+
+
+datas = [{str(k):datas[k]} for k,v in datas.items()]
+import json
+
+
+datas = json.dumps(datas, default=default)
+print(datas)
 
 class HeatmapView(TemplateView):
 
