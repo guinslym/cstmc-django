@@ -67,19 +67,19 @@ import collections
 counter=collections.Counter(data)
 counter = dict(counter)
 
-# datas = []
-# for key, value in enumerate(counter):
-#     datas.append({"date":value , "value":key})
-#
-# import json
-# datas = json.dumps(counter)
-# print(datas)
+datas = []
+for key, value in enumerate(counter):
+    datas.append({"date":value , "value":key})
+
+import json
+datas = json.dumps(counter)
+print(datas)
 # {date: 946702811, value: 15}
 
 import pandas as pd
 import arrow
-data = pd.read_excel('excel_file.xlsx')
-# data = pd.read_excel('excel_file.xlsx', skiprows=[0:1])
+# data = pd.read_excel('excel_file.xlsx')
+data = pd.read_excel('excel_file.xlsx', skiprows=[0])
 
 
 from datetime import datetime
